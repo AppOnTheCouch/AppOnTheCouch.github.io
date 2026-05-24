@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cancellazione Dati – Salvappami</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --purple: #6B3FA0; --pink: #E8386D; --yellow: #FFD93D; --dark: #1A1A2E; --bg: #FFF8EE; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; background: var(--bg); color: #2D2D2D; }
+    nav { background: var(--dark); padding: 14px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; }
+    nav a:hover { color: var(--yellow); }
+    nav span { color: rgba(255,255,255,0.3); }
+    .hero { background: linear-gradient(135deg, #E84545, var(--pink)); padding: 40px 20px; text-align: center; }
+    .hero h1 { font-family: 'Fredoka One', cursive; font-size: 2.5rem; color: #fff; }
+    .hero p { color: rgba(255,255,255,0.85); margin-top: 8px; }
+    main { max-width: 820px; margin: 0 auto; padding: 48px 24px; }
+    h2 { font-family: 'Fredoka One', cursive; font-size: 1.7rem; color: var(--purple); margin: 36px 0 16px; }
+    p { line-height: 1.75; margin-bottom: 14px; font-size: 1rem; }
+    .info-box { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 2px 16px rgba(107,63,160,0.09); margin-bottom: 24px; border-left: 4px solid var(--purple); }
+    .info-box.green { border-left-color: #27AE60; }
+    .steps-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px; }
+    .steps-list li { background: #fff; border-radius: 16px; padding: 20px 24px; display: flex; gap: 16px; align-items: flex-start; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+    .step-num { background: var(--purple); color: #fff; font-family: 'Fredoka One', cursive; font-size: 1.3rem; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-text strong { display: block; font-size: 1rem; margin-bottom: 4px; }
+    .step-text span { font-size: 0.93rem; color: #666; line-height: 1.6; }
+    .contact-box { background: linear-gradient(135deg, #E84545, var(--pink)); border-radius: 24px; padding: 40px; text-align: center; color: #fff; margin-top: 20px; }
+    .contact-box h2 { color: #fff; margin-top: 0; }
+    .contact-box p { opacity: 0.9; margin-bottom: 20px; }
+    .contact-box a.btn { display: inline-block; background: var(--yellow); color: var(--dark); padding: 14px 36px; border-radius: 50px; font-weight: 800; font-size: 1.05rem; text-decoration: none; transition: transform 0.2s; }
+    .contact-box a.btn:hover { transform: scale(1.05); }
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); text-align: center; padding: 24px; font-size: 0.9rem; margin-top: 60px; }
+    footer a { color: var(--yellow); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html">🛋️ AppOnTheCouch</a>
+  <span>›</span>
+  <a href="index.html">Salvappami</a>
+  <span>›</span>
+  <a href="#">Cancellazione Dati</a>
+</nav>
+
+<div class="hero">
+  <h1>🗑️ Cancellazione Dati</h1>
+  <p>Hai diritto alla cancellazione dei tuoi dati (art. 17 GDPR)</p>
+</div>
+
+<main>
+
+  <div class="info-box green">
+    <p>✅ <strong>Buona notizia:</strong> Salvappami non richiede registrazione e non conserva dati personali su server esterni. La maggior parte dei tuoi dati è già solo sul tuo dispositivo e viene eliminata automaticamente disinstallando l'app.</p>
+  </div>
+
+  <h2>Come cancellare i tuoi dati</h2>
+
+  <ul class="steps-list">
+    <li>
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>Disinstalla l'app</strong>
+        <span>La disinstallazione di Salvappami rimuove immediatamente dal tuo dispositivo tutti i dati locali: nome inserito, contatti selezionati, preferenze. Non rimane nulla sul tuo telefono.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>Revoca l'accesso alla rubrica</strong>
+        <span>Se preferisci mantenere l'app installata ma revocare l'accesso ai contatti, vai in Impostazioni del tuo dispositivo → App → Salvappami → Permessi → disattiva "Contatti".</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>Disattiva le notifiche push</strong>
+        <span>Per bloccare l'invio e la ricezione di notifiche push: Impostazioni → Notifiche → Salvappami → disattiva. Questo invalida automaticamente il push token associato al tuo dispositivo.</span>
+      </div>
+    </li>
+  </ul>
+
+  <h2>Richiesta di cancellazione formale</h2>
+  <p>Se desideri inviare una richiesta formale di cancellazione dei dati ai sensi dell'art. 17 del GDPR, puoi contattarci via email. Risponderemo entro <strong>30 giorni</strong> confermando l'avvenuta cancellazione o spiegando l'eventuale impossibilità tecnica.</p>
+
+  <div class="info-box">
+    <p><strong>Nella tua email includi:</strong></p>
+    <ul style="padding-left:20px; margin-top:8px">
+      <li>Oggetto: "Richiesta cancellazione dati – Salvappami"</li>
+      <li>Il numero di telefono o identificativo associato all'account (se applicabile)</li>
+      <li>La piattaforma usata (iOS o Android)</li>
+    </ul>
+  </div>
+
+  <div class="contact-box">
+    <h2>🗑️ Richiedi la cancellazione</h2>
+    <p>Inviaci una email e provvederemo alla cancellazione di tutti i dati eventualmente presenti sui nostri sistemi entro 30 giorni.</p>
+    <a href="mailto:apponthecouch@gmail.com?subject=Richiesta cancellazione dati Salvappami" class="btn">✉️ Invia richiesta</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2025 AppOnTheCouch · <a href="privacy.html">Privacy Policy</a> · <a href="support.html">Supporto</a></p>
+</footer>
+
+</body>
+</html>
