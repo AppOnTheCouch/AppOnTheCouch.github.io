@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AppOnTheCouch – App fatte col cuore (e dal divano)</title>
+  <meta name="description" content="AppOnTheCouch è uno sviluppatore indie di app mobile divertenti e originali per iOS e Android.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FFF8EE;
+      --purple: #6B3FA0;
+      --pink: #E8386D;
+      --yellow: #FFD93D;
+      --red: #E84545;
+      --dark: #1A1A2E;
+      --text: #2D2D2D;
+      --card-bg: #FFFFFF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, var(--purple) 0%, #9B59B6 50%, var(--pink) 100%);
+      padding: 60px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .header-inner { position: relative; z-index: 1; }
+    .couch-emoji { font-size: 64px; display: block; margin-bottom: 12px; animation: bounce 2s ease-in-out infinite; }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    header h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      color: #fff;
+      letter-spacing: 1px;
+      text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+    }
+    header p {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      color: rgba(255,255,255,0.9);
+      margin-top: 12px;
+      font-weight: 600;
+    }
+    .wave {
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 60px;
+    }
+
+    /* MAIN */
+    main { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+
+    .section-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: 2rem;
+      color: var(--purple);
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* APP CARD */
+    .app-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 32px;
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      box-shadow: 0 8px 40px rgba(107,63,160,0.12);
+      border: 2px solid transparent;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .app-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(107,63,160,0.2);
+      border-color: var(--purple);
+    }
+    .app-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 22px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .app-info h3 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.8rem;
+      color: var(--pink);
+      margin-bottom: 8px;
+    }
+    .app-info p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+    .app-badge {
+      display: inline-block;
+      margin-top: 14px;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* CHI SIAMO */
+    .about {
+      margin-top: 60px;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      border-radius: 24px;
+      padding: 40px;
+      color: #fff;
+      text-align: center;
+    }
+    .about h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .about p { font-size: 1.05rem; line-height: 1.7; opacity: 0.93; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--yellow); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media(max-width: 600px) {
+      .app-card { flex-direction: column; align-items: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="couch-emoji">🛋️</span>
+    <h1>AppOnTheCouch</h1>
+    <p>App fatte col cuore — e dal divano</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C300,60 900,0 1200,30 L1200,60 L0,60 Z" fill="#FFF8EE"/>
+  </svg>
+</header>
+
+<main>
+  <h2 class="section-title">📱 Le nostre app</h2>
+
+  <a href="apps/salvappami/index.html" class="app-card">
+    <img src="apps/salvappami/salvappami_icona.png" alt="Icona Salvappami">
+    <div class="app-info">
+      <h3>Salvappami</h3>
+      <p>L'app per chi sa quando è il momento… di fuggire! Attiva il tuo squadrone di soccorso con una pressione discreta del pollice e scappa dalle conversazioni noiose con stile.</p>
+      <span class="app-badge">Scopri l'app →</span>
+    </div>
+  </a>
+
+  <div class="about">
+    <h2>🛋️ Chi siamo</h2>
+    <p>AppOnTheCouch è un progetto indie nato dalla passione per le app originali e divertenti. Sviluppiamo dal divano, con serietà (quasi) professionale e tanto buonumore. Le nostre app sono pensate per il mercato italiano, con un occhio sempre attento all'esperienza utente.</p>
+    <p style="margin-top:14px">Contatti: <a href="mailto:apponthecouch@gmail.com" style="color:#FFD93D;font-weight:800">apponthecouch@gmail.com</a></p>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 AppOnTheCouch · Valencia, Spagna ·
+    <a href="apps/salvappami/privacy.html">Privacy Policy</a> ·
+    <a href="apps/salvappami/support.html">Supporto</a>
+  </p>
+</footer>
+
+</body>
+</html>
