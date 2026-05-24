@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salvappami – L'app per scappare dalle conversazioni noiose</title>
+  <meta name="description" content="Salvappami è l'app umoristica che ti salva dalle conversazioni noiose. Seleziona i tuoi amici salvatori e attiva l'SOS discreto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FFF8EE;
+      --purple: #6B3FA0;
+      --pink: #E8386D;
+      --yellow: #FFD93D;
+      --red: #E84545;
+      --dark: #1A1A2E;
+      --text: #2D2D2D;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      background: var(--dark);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; }
+    nav a:hover { color: var(--yellow); }
+    nav span { color: rgba(255,255,255,0.3); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #FF6B6B 0%, var(--pink) 40%, var(--purple) 100%);
+      padding: 60px 20px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M20 20 L40 0 L40 40 Z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero img.icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      margin-bottom: 24px;
+      animation: pop 0.5s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes pop { from{transform:scale(0.5);opacity:0} to{transform:scale(1);opacity:1} }
+    .hero h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(3rem, 10vw, 6rem);
+      color: #fff;
+      text-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+      letter-spacing: 2px;
+    }
+    .hero .tagline {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      color: rgba(255,255,255,0.95);
+      font-weight: 800;
+      margin-top: 10px;
+      background: rgba(0,0,0,0.15);
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: 50px;
+      margin-top: 16px;
+    }
+    .store-buttons { margin-top: 30px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .store-btn {
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.5);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    .store-btn:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
+    .wave { position: absolute; bottom: -2px; left: 0; right: 0; height: 60px; }
+
+    /* CONTENT */
+    main { max-width: 860px; margin: 0 auto; padding: 60px 20px; }
+
+    .section-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: 2rem;
+      color: var(--purple);
+      margin-bottom: 24px;
+    }
+
+    /* COME FUNZIONA */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 60px; }
+    .step {
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 24px rgba(107,63,160,0.1);
+      text-align: center;
+      border-top: 4px solid var(--purple);
+    }
+    .step .num {
+      font-family: 'Fredoka One', cursive;
+      font-size: 2.5rem;
+      color: var(--pink);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .step h4 { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; color: var(--dark); }
+    .step p { font-size: 0.92rem; color: #666; line-height: 1.5; }
+
+    /* LIVELLI */
+    .levels { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 60px; }
+    .level {
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+    .level-1 { background: #FFF3CD; border: 2px solid #FFD93D; color: #856404; }
+    .level-2 { background: #FFE0CC; border: 2px solid #FF8C42; color: #7A3B00; }
+    .level-3 { background: #FFCDD2; border: 2px solid #E84545; color: #7B0000; }
+    .level-4 { background: #EDE0FF; border: 2px solid #6B3FA0; color: #3B006B; }
+    .level-emoji { font-size: 2rem; margin-bottom: 8px; display: block; }
+
+    /* SCREENSHOT */
+    .screenshot-wrap {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .screenshot-wrap img {
+      max-width: 280px;
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+    }
+
+    /* LINKS */
+    .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 60px; }
+    .link-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--dark);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      font-weight: 800;
+      font-size: 1rem;
+      border: 2px solid transparent;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .link-card:hover { border-color: var(--purple); transform: translateY(-3px); }
+    .link-card .icon { font-size: 2rem; display: block; margin-bottom: 10px; }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); text-align: center; padding: 30px 20px; font-size: 0.9rem; }
+    footer a { color: var(--yellow); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html">🛋️ AppOnTheCouch</a>
+  <span>›</span>
+  <a href="#">Salvappami</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <img src="salvappami_icona.png" alt="Icona Salvappami" class="icon">
+    <h1>Salvappami</h1>
+    <div class="tagline">🚨 L'app per chi sa quando è il momento… di fuggire!</div>
+    <div class="store-buttons">
+      <a href="#" class="store-btn">📱 App Store</a>
+      <a href="#" class="store-btn">🤖 Google Play</a>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C300,60 900,0 1200,30 L1200,60 L0,60 Z" fill="#FFF8EE"/>
+  </svg>
+</div>
+
+<main>
+
+  <h2 class="section-title">🤔 Come funziona?</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <h4>Scegli i salvatori</h4>
+      <p>Prima dell'evento seleziona fino a 3 amici fidati dalla tua rubrica.</p>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <h4>Attiva Salvappami</h4>
+      <p>L'app crea un finto blocco schermo. Il widget segreto è in alto a destra, vicino al tasto volume.</p>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <h4>Premi dalla tasca</h4>
+      <p>Una pressione prolungata — senti la vibrazione di conferma — e l'SOS è inviato!</p>
+    </div>
+    <div class="step">
+      <div class="num">4</div>
+      <h4>Aspetta il soccorso</h4>
+      <p>I tuoi amici ricevono l'allerta e vengono a tirarti fuori dalla situazione.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">📊 I 4 livelli di noiosità</h2>
+  <div class="levels">
+    <div class="level level-1"><span class="level-emoji">😐</span>Livello 1<br>Noiaman</div>
+    <div class="level level-2"><span class="level-emoji">😩</span>Livello 2<br>Sono intrappolato</div>
+    <div class="level level-3"><span class="level-emoji">😱</span>Livello 3<br>Emergenza!</div>
+    <div class="level level-4"><span class="level-emoji">🆘</span>Livello 4<br>SOS TOTALE</div>
+  </div>
+
+  <h2 class="section-title">📸 Screenshot</h2>
+  <div class="screenshot-wrap">
+    <img src="salvappami_home.jpeg" alt="Screenshot Salvappami">
+  </div>
+
+  <h2 class="section-title">🔗 Informazioni legali</h2>
+  <div class="link-grid">
+    <a href="privacy.html" class="link-card">
+      <span class="icon">🔒</span>
+      Privacy Policy
+    </a>
+    <a href="support.html" class="link-card">
+      <span class="icon">💬</span>
+      Supporto
+    </a>
+    <a href="delete-data.html" class="link-card">
+      <span class="icon">🗑️</span>
+      Cancellazione Dati
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2025 AppOnTheCouch · <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a> · Valencia, Spagna</p>
+</footer>
+
+</body>
+</html>
