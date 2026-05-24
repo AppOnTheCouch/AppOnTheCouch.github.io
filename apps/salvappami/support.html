@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supporto – Salvappami</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --purple: #6B3FA0; --pink: #E8386D; --yellow: #FFD93D; --dark: #1A1A2E; --bg: #FFF8EE; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; background: var(--bg); color: #2D2D2D; }
+    nav { background: var(--dark); padding: 14px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; }
+    nav a:hover { color: var(--yellow); }
+    nav span { color: rgba(255,255,255,0.3); }
+    .hero { background: linear-gradient(135deg, var(--purple), #9B59B6); padding: 40px 20px; text-align: center; }
+    .hero h1 { font-family: 'Fredoka One', cursive; font-size: 2.5rem; color: #fff; }
+    .hero p { color: rgba(255,255,255,0.85); margin-top: 8px; }
+    main { max-width: 820px; margin: 0 auto; padding: 48px 24px; }
+    h2 { font-family: 'Fredoka One', cursive; font-size: 1.7rem; color: var(--purple); margin: 36px 0 20px; }
+    .faq { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+    .faq-item { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 16px rgba(107,63,160,0.09); }
+    .faq-q {
+      padding: 20px 24px;
+      font-weight: 800;
+      font-size: 1.02rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 4px solid var(--purple);
+    }
+    .faq-q:hover { background: #FAF5FF; }
+    .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; font-size: 0.97rem; line-height: 1.7; color: #555; }
+    .faq-item.open .faq-a { max-height: 300px; padding: 0 24px 20px; }
+    .faq-item.open .arrow { transform: rotate(180deg); }
+    .arrow { transition: transform 0.3s; font-style: normal; }
+    .contact-box { background: linear-gradient(135deg, var(--pink), var(--purple)); border-radius: 24px; padding: 40px; text-align: center; color: #fff; }
+    .contact-box h2 { color: #fff; margin-top: 0; }
+    .contact-box p { opacity: 0.9; margin-bottom: 20px; }
+    .contact-box a.btn {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--dark);
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .contact-box a.btn:hover { transform: scale(1.05); }
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); text-align: center; padding: 24px; font-size: 0.9rem; margin-top: 60px; }
+    footer a { color: var(--yellow); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html">🛋️ AppOnTheCouch</a>
+  <span>›</span>
+  <a href="index.html">Salvappami</a>
+  <span>›</span>
+  <a href="#">Supporto</a>
+</nav>
+
+<div class="hero">
+  <h1>💬 Supporto</h1>
+  <p>Hai bisogno di aiuto con Salvappami? Siamo qui!</p>
+</div>
+
+<main>
+
+  <h2>❓ Domande frequenti</h2>
+  <div class="faq">
+
+    <div class="faq-item">
+      <div class="faq-q">L'app funziona senza connessione internet? <span class="arrow">▼</span></div>
+      <div class="faq-a">No, per inviare il segnale SOS ai tuoi salvatori è necessaria una connessione dati (WiFi o rete mobile). Il finto blocco schermo si attiva comunque, ma il messaggio non verrà consegnato senza connessione.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">I miei amici devono avere l'app installata? <span class="arrow">▼</span></div>
+      <div class="faq-a">Sì, per ricevere il segnale SOS anche i tuoi salvatori devono avere Salvappami installata e l'app attiva in modalità finto blocco schermo. Coordinatevi prima dell'evento!</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Il widget invisibile funziona anche con il telefono in tasca? <span class="arrow">▼</span></div>
+      <div class="faq-a">Esattamente! Il widget sensibile al tocco si trova nell'angolo in alto a destra del finto blocco schermo — lo stesso lato del tasto volume. Basta tenerlo premuto per qualche secondo: sentirai una vibrazione di conferma che il messaggio è stato inviato.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Posso usare l'app su iOS e Android contemporaneamente con i miei amici? <span class="arrow">▼</span></div>
+      <div class="faq-a">Sì! Salvappami funziona in modo cross-platform: un utente iPhone può salvare un amico Android e viceversa, senza problemi.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Come si cambia il livello SOS? <span class="arrow">▼</span></div>
+      <div class="faq-a">Dalla schermata principale, prima di attivare Salvappami, puoi selezionare il livello di "noiosità" desiderato (da 1 – NOIAMAN a 4 – SOS TOTALE). Ogni livello invia un messaggio e un'immagine diversi ai tuoi salvatori.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Come disattivo l'app? <span class="arrow">▼</span></div>
+      <div class="faq-a">Puoi disattivare il finto blocco schermo dalla stessa area del widget, oppure aprire normalmente il telefono con il PIN/Face ID. L'app tornerà in background.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">I miei dati della rubrica vengono condivisi? <span class="arrow">▼</span></div>
+      <div class="faq-a">No. I numeri di telefono che selezioni restano solo sul tuo dispositivo e non vengono mai caricati sui nostri server. Leggi la nostra Privacy Policy per tutti i dettagli.</div>
+    </div>
+
+  </div>
+
+  <div class="contact-box">
+    <h2>📧 Non hai trovato risposta?</h2>
+    <p>Scrivici direttamente, risponderemo il prima possibile (di solito entro 48 ore, salvo pause dal divano).</p>
+    <a href="mailto:apponthecouch@gmail.com?subject=Supporto Salvappami" class="btn">✉️ Scrivi al supporto</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2025 AppOnTheCouch · <a href="privacy.html">Privacy Policy</a> · <a href="delete-data.html">Cancellazione Dati</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
