@@ -1,37 +1,299 @@
-🛋️ AppOnTheCouch › Chi Lo Ha Detto
-Icona Chi Lo Ha Detto
-Chi Lo Ha Detto
-📜 L'app per creare citazioni improbabili — e ultime parole famose.
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chi Lo Ha Detto è l'app per creare citazioni improbabili. Scatta, ritaglia, scrivi — e condividi le tue ultime parole famose.">
+  <title>Chi Lo Ha Detto – Crea citazioni improbabili</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f9f9f9;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
 
-📱 App Store — Presto
-🤖 Google Play — Presto
-🤔 Come funziona?
-1
-Scatta o scegli una foto
-Inquadra chiunque — amici, colleghi, perfetti sconosciuti — e scatta. Oppure scegli dalla galleria.
+    /* NAV */
+    .nav {
+      padding: 16px 24px;
+      font-size: 14px;
+      color: #666;
+    }
+    .nav a { text-decoration: none; color: #007aff; }
+    .nav a:hover { text-decoration: underline; }
 
-2
-Ritaglia il soggetto
-L'app ti permette di ritagliare il viso e posizionarlo perfettamente sulla citazione.
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 48px 24px 40px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .hero img {
+      width: 120px;
+      height: 120px;
+      border-radius: 26px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    }
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .hero .tagline {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 28px;
+    }
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.8; }
+    .btn-primary {
+      background: #1a1a1a;
+      color: #fff;
+    }
+    .btn-secondary {
+      background: #e5e5ea;
+      color: #1a1a1a;
+    }
+    .btn-coming {
+      background: #e5e5ea;
+      color: #888;
+      cursor: default;
+      pointer-events: none;
+    }
 
-3
-Scrivi la frase e il nome
-Inserisci la citazione più improbabile che ti viene in mente. E il nome di chi — ovviamente — l'ha detta.
+    /* SECTIONS */
+    .section {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      border-top: 1px solid #e5e5ea;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
 
-4
-Salva e condividi
-L'app genera la citazione in bianco e nero, con bordi sfumati e stile da classico a stampa. Scaricala e mandala a tutti.
+    /* STEPS */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #1a1a1a;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-content h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .step-content p {
+      font-size: 15px;
+      color: #555;
+    }
 
-🎭 Un esempio
-🏛️
-"Ho sempre trovato il lunedì mattina profondamente ingiusto."
+    /* EXAMPLE QUOTE PREVIEW */
+    .quote-preview {
+      background: #1a1a1a;
+      color: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-top: 8px;
+    }
+    .quote-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      background: #444;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      filter: grayscale(1);
+    }
+    .quote-text {
+      flex: 1;
+    }
+    .quote-text .frase {
+      font-style: italic;
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      color: #ddd;
+    }
+    .quote-text .chi {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #aaa;
+    }
 
-— Marco Aurelio, imperatore romano
+    /* SCREENSHOT PLACEHOLDER */
+    .screenshot-placeholder {
+      background: #e5e5ea;
+      border-radius: 16px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 15px;
+      margin-top: 8px;
+    }
 
-📸 Screenshot
-📱 Screenshot in arrivo
-🔗 Informazioni legali
-🔒 Privacy Policy
-💬 Supporto
-🗑️ Cancellazione Dati
-© 2025 AppOnTheCouch · apponthecouch@gmail.com · Valencia, Spagna
+    /* LEGAL LINKS */
+    .legal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .legal-links a {
+      display: inline-block;
+      padding: 10px 18px;
+      background: #e5e5ea;
+      border-radius: 10px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #1a1a1a;
+    }
+    .legal-links a:hover { background: #d1d1d6; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+      color: #999;
+      border-top: 1px solid #e5e5ea;
+    }
+    footer a { color: #007aff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 26px; }
+      .quote-preview { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="https://apponthecouch.github.io/index.html">🛋️ AppOnTheCouch</a> › <a href="#">Chi Lo Ha Detto</a>
+  </nav>
+
+  <div class="hero">
+    <img src="chilohadetto_icona.png" alt="Icona Chi Lo Ha Detto">
+    <h1>Chi Lo Ha Detto</h1>
+    <p class="tagline">📜 L'app per creare citazioni improbabili — e ultime parole famose.</p>
+    <div class="btn-group">
+      <span class="btn btn-coming">📱 App Store — Presto</span>
+      <span class="btn btn-coming">🤖 Google Play — Presto</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🤔 Come funziona?</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Scatta o scegli una foto</h3>
+          <p>Inquadra chiunque — amici, colleghi, perfetti sconosciuti — e scatta. Oppure scegli dalla galleria.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Ritaglia il soggetto</h3>
+          <p>L'app ti permette di ritagliare il viso e posizionarlo perfettamente sulla citazione.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Scrivi la frase e il nome</h3>
+          <p>Inserisci la citazione più improbabile che ti viene in mente. E il nome di chi — ovviamente — l'ha detta.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Salva e condividi</h3>
+          <p>L'app genera la citazione in bianco e nero, con bordi sfumati e stile da classico a stampa. Scaricala e mandala a tutti.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🎭 Un esempio</h2>
+    <div class="quote-preview">
+      <div class="quote-photo">🏛️</div>
+      <div class="quote-text">
+        <p class="frase">"Ho sempre trovato il lunedì mattina profondamente ingiusto."</p>
+        <p class="chi">— Marco Aurelio, imperatore romano</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📸 Screenshot</h2>
+    <div class="screenshot-placeholder">
+      📱 Screenshot in arrivo
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🔗 Informazioni legali</h2>
+    <div class="legal-links">
+      <a href="privacy.html">🔒 Privacy Policy</a>
+      <a href="support.html">💬 Supporto</a>
+      <a href="delete-data.html">🗑️ Cancellazione Dati</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 AppOnTheCouch · <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a> · Valencia, Spagna
+  </footer>
+
+</body>
+</html>
