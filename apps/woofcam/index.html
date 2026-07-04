@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WoofCam – Turn Your Old Phone into a Live Pet Camera</title>
+  <meta name="description" content="WoofCam turns any old smartphone into a free live camera for your dog, cat, or any pet. Watch live from anywhere, and unlock motion & sound alerts with local recording in Premium.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FDF1E2;
+      --amber: #F2A65A;
+      --orange: #E2833F;
+      --coffee: #5C4033;
+      --dark: #2E1F17;
+      --text: #3A2C22;
+      --text-soft: #8B6F56;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      background: var(--dark);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; }
+    nav a:hover { color: var(--amber); }
+    nav span { color: rgba(255,255,255,0.3); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--amber) 0%, var(--orange) 45%, var(--coffee) 100%);
+      padding: 60px 20px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M20 20 L40 0 L40 40 Z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero img.icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      margin-bottom: 24px;
+      background: #fff;
+      animation: pop 0.5s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes pop { from{transform:scale(0.5);opacity:0} to{transform:scale(1);opacity:1} }
+    .hero h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(3rem, 10vw, 6rem);
+      color: #fff;
+      text-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+      letter-spacing: 2px;
+    }
+    .hero .tagline {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      color: rgba(255,255,255,0.95);
+      font-weight: 800;
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: 50px;
+      background: rgba(0,0,0,0.15);
+      margin-top: 16px;
+    }
+    .store-buttons { margin-top: 30px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .store-btn {
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.5);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: default;
+      text-decoration: none;
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .store-btn .soon {
+      font-size: 0.7rem;
+      font-weight: 800;
+      background: rgba(255,255,255,0.9);
+      color: var(--coffee);
+      padding: 2px 8px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .wave { position: absolute; bottom: -2px; left: 0; right: 0; height: 60px; }
+
+    /* CONTENT */
+    main { max-width: 860px; margin: 0 auto; padding: 60px 20px; }
+
+    .section-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: 2rem;
+      color: var(--coffee);
+      margin-bottom: 24px;
+    }
+
+    /* COME FUNZIONA */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 60px; }
+    .step {
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 24px rgba(92,64,51,0.1);
+      text-align: center;
+      border-top: 4px solid var(--coffee);
+    }
+    .step .num {
+      font-family: 'Fredoka One', cursive;
+      font-size: 2.5rem;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .step h4 { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; color: var(--dark); }
+    .step p { font-size: 0.92rem; color: #666; line-height: 1.5; }
+
+    /* FREE VS PREMIUM */
+    .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 24px; }
+    .plan {
+      border-radius: 20px;
+      padding: 28px 26px;
+      text-align: left;
+    }
+    .plan h3 { font-family: 'Fredoka One', cursive; font-size: 1.4rem; margin-bottom: 14px; }
+    .plan ul { list-style: none; }
+    .plan li { font-size: 0.95rem; line-height: 1.6; padding-left: 26px; position: relative; margin-bottom: 10px; }
+    .plan li::before { content: '🐾'; position: absolute; left: 0; top: 0; font-size: 0.9rem; }
+    .plan-free { background: #FFF3E0; border: 2px solid var(--amber); color: #6B4A1E; }
+    .plan-free h3 { color: #B96A1E; }
+    .plan-premium { background: #F0E3D8; border: 2px solid var(--coffee); color: #4A3324; }
+    .plan-premium h3 { color: var(--coffee); }
+    .no-ads-note {
+      text-align: center;
+      font-weight: 800;
+      color: var(--coffee);
+      background: #FFF3E0;
+      border: 2px dashed var(--amber);
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin-bottom: 60px;
+      font-size: 0.95rem;
+    }
+
+    /* SCREENSHOTS */
+    .screens-title-wrap { margin-bottom: 24px; }
+    .screens { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-bottom: 60px; }
+    .screens img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+    }
+
+    /* LINKS */
+    .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 60px; }
+    .link-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--dark);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      font-weight: 800;
+      font-size: 1rem;
+      border: 2px solid transparent;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .link-card:hover { border-color: var(--coffee); transform: translateY(-3px); }
+    .link-card .icon { font-size: 2rem; display: block; margin-bottom: 10px; }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); text-align: center; padding: 30px 20px; font-size: 0.9rem; }
+    footer a { color: var(--amber); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html">🛋️ AppOnTheCouch</a>
+  <span>›</span>
+  <a href="#">WoofCam</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <img src="woofcam_icona.png" alt="WoofCam icon" class="icon">
+    <h1>WoofCam</h1>
+    <div class="tagline">🐾 Keep an eye on your pet, anywhere.</div>
+    <div class="store-buttons">
+      <a href="#" class="store-btn">📱 App Store <span class="soon">Coming soon</span></a>
+      <a href="#" class="store-btn">🤖 Google Play <span class="soon">Coming soon</span></a>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C300,60 900,0 1200,30 L1200,60 L0,60 Z" fill="#FDF1E2"/>
+  </svg>
+</div>
+
+<main>
+
+  <h2 class="section-title">🔍 How it works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <h4>Give your old phone a new purpose</h4>
+      <p>Dig out that old smartphone from the drawer. WoofCam turns it into a live pet camera — for free.</p>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <h4>Set it up in seconds</h4>
+      <p>Sign in with your free WoofCam account and point the camera phone at your dog's, cat's, or any pet's favorite spot.</p>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <h4>Watch live from anywhere</h4>
+      <p>See your pet in real time from your main phone, whether you're at the office or on the go.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">✨ Free vs Premium</h2>
+  <div class="plans">
+    <div class="plan plan-free">
+      <h3>🆓 Free</h3>
+      <ul>
+        <li>Turn any old phone into a live pet camera</li>
+        <li>Watch the live stream from your main phone, anywhere</li>
+        <li>Works great for dogs, cats, and any companion animal</li>
+      </ul>
+    </div>
+    <div class="plan plan-premium">
+      <h3>⭐ Premium</h3>
+      <ul>
+        <li>Motion & sound detection alerts, sent straight to your phone</li>
+        <li>One-tap local recording, saved directly on your device</li>
+        <li>An affordable upgrade — no big investment required</li>
+      </ul>
+    </div>
+  </div>
+  <div class="no-ads-note">🚫 No clutter, no annoying ads. WoofCam stays simple — and Premium won't cost you a fortune.</div>
+
+  <div class="screens-title-wrap">
+    <h2 class="section-title">📸 Screenshots</h2>
+  </div>
+  <div class="screens">
+    <img src="woofcam_screen1.jpg" alt="WoofCam onboarding – give your old phone a new purpose">
+    <img src="woofcam_screen2.jpg" alt="WoofCam onboarding – watch live from anywhere">
+    <img src="woofcam_screen3.jpg" alt="WoofCam sign in screen">
+  </div>
+
+  <h2 class="section-title">🔗 Legal information</h2>
+  <div class="link-grid">
+    <a href="privacy.html" class="link-card">
+      <span class="icon">🔒</span>
+      Privacy Policy
+    </a>
+    <a href="support.html" class="link-card">
+      <span class="icon">💬</span>
+      Support
+    </a>
+    <a href="delete-data.html" class="link-card">
+      <span class="icon">🗑️</span>
+      Delete My Data
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 AppOnTheCouch · <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a> · Valencia, Spain</p>
+</footer>
+
+</body>
+</html>
