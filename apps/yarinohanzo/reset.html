@@ -83,22 +83,17 @@
   }
 
   function goToReset() {
-    const token = getParam("token");
-    const type = getParam("type") || "recovery";
-    const redirectTo = getParam("redirect_to") || "io.yarinohanzo://reset-callback";
-
-    if (!token) {
-      document.getElementById("errorMsg").style.display = "block";
-      document.getElementById("resetBtn").style.display = "none";
-      return;
-    }
-
-    const verifyUrl = SUPABASE_DOMAIN + "/auth/v1/verify?token=" + encodeURIComponent(token)
-      + "&type=" + encodeURIComponent(type)
-      + "&redirect_to=" + encodeURIComponent(redirectTo);
-
-    window.location.href = verifyUrl;
+  const token = getParam("token");
+  const type = getParam("type") || "recovery";
+  if (!token) {
+    document.getElementById("errorMsg").style.display = "block";
+    document.getElementById("resetBtn").style.display = "none";
+    return;
   }
+  const appUrl = "io.yarinohanzo://reset-callback?token=" + encodeURIComponent(token)
+    + "&type=" + encodeURIComponent(type);
+  window.location.href = appUrl;
+}
 </script>
 </body>
 </html>
