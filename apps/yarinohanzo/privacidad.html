@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad – Yari No Hanzo</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #171a21;
+    --text: #eaeaea;
+    --muted: #9aa0aa;
+    --accent: #d62828;
+    --border: #262a33;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  header {
+    padding: 48px 20px 24px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 {
+    margin: 0 0 8px;
+    font-size: 1.8rem;
+  }
+  header p {
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+  }
+  section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 1.15rem;
+    margin-top: 0;
+    color: var(--accent);
+  }
+  p, li { color: var(--muted); }
+  ul { padding-left: 20px; margin: 8px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+  }
+  td, th {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92rem;
+    color: var(--muted);
+    vertical-align: top;
+  }
+  th { color: var(--text); }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: var(--muted);
+    text-decoration: underline;
+    font-size: 0.9rem;
+  }
+  .back-link a { color: var(--muted); }
+  .updated { text-align:center; color: var(--muted); font-size: 0.85rem; margin-top: 40px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Política de Privacidad</h1>
+  <p>Yari No Hanzo – App de control horario y fichaje conforme al RDL 8/2019 y a la Ley de Fichaje 2026</p>
+</header>
+
+<main>
+
+  <div class="back-link">← <a href="soporte.html">Volver a Soporte</a></div>
+
+  <section>
+    <h2>1. Responsable del tratamiento</h2>
+    <p>El responsable del tratamiento de los datos recogidos a través de la app Yari No Hanzo es la empresa titular de la cuenta contratante que ha dado de alta a los usuarios. Para cualquier consulta relacionada con esta política, puedes escribir a <a href="mailto:finance@katanamart.com" style="color:#d62828;">finance@katanamart.com</a>.</p>
+  </section>
+
+  <section>
+    <h2>2. Finalidad del tratamiento</h2>
+    <p>Los datos se recogen exclusivamente para cumplir con las obligaciones legales de registro de jornada laboral impuestas por el RDL 8/2019 y la Ley de Fichaje 2026, así como para la gestión interna de ausencias, vacaciones y bajas médicas del personal.</p>
+  </section>
+
+  <section>
+    <h2>3. Datos que recopilamos</h2>
+    <table>
+      <tr><th>Categoría de datos</th><th>Detalle</th></tr>
+      <tr><td>Identificación y acceso</td><td>Email y contraseña, gestionados mediante Supabase Auth</td></tr>
+      <tr><td>Registro de jornada</td><td>Horas de entrada y salida, pausas, correcciones realizadas</td></tr>
+      <tr><td>Geolocalización</td><td>Latitud/longitud capturadas únicamente al fichar entrada o salida, y solo si el "Modo remoto" está desactivado. No se recoge ubicación durante las pausas ni en modo remoto</td></tr>
+      <tr><td>Biometría</td><td>Si activas el acceso con huella digital o Face ID, la verificación se realiza de forma local en tu dispositivo a través de los sistemas operativos Android/iOS. Ningún dato biométrico se transmite ni almacena en nuestros servidores</td></tr>
+      <tr><td>Ausencias y bajas médicas</td><td>Fechas solicitadas, notas y, en su caso, fotografía del justificante médico, almacenada en Supabase Storage</td></tr>
+      <tr><td>Notificaciones</td><td>Registro de notificaciones internas de la app (aprobaciones, avisos, recordatorios)</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. Base jurídica</h2>
+    <ul>
+      <li><strong>Cumplimiento de obligación legal</strong> (art. 6.1.c RGPD): registro horario obligatorio.</li>
+      <li><strong>Consentimiento explícito</strong> (art. 9.2.a RGPD): para el tratamiento de datos de salud contenidos en los justificantes médicos de baja.</li>
+      <li><strong>Ejecución del contrato laboral</strong>: gestión de vacaciones, ausencias y horas extra.</li>
+    </ul>
+    <p>Al primer acceso, la app solicita tu consentimiento expreso a través de la pantalla de Consentimiento, y puedes consultar en todo momento las Notas Legales desde el menú de la app.</p>
+  </section>
+
+  <section>
+    <h2>5. Dónde se almacenan los datos</h2>
+    <p>Los datos se almacenan en la infraestructura de Supabase (base de datos y almacenamiento de archivos), protegidos mediante políticas de seguridad a nivel de fila (Row Level Security), que garantizan que cada usuario solo pueda acceder a sus propios datos, y que los perfiles de administrador solo accedan a los datos necesarios para la gestión del personal.</p>
+  </section>
+
+  <section>
+    <h2>6. Conservación de los datos</h2>
+    <p>De acuerdo con el RDL 8/2019, los registros de jornada se conservan durante un mínimo de 4 años. Los justificantes médicos y demás documentación asociada se conservan durante el tiempo necesario para la gestión de la ausencia correspondiente, salvo que la normativa laboral exija un plazo mayor.</p>
+  </section>
+
+  <section>
+    <h2>7. Destinatarios de los datos</h2>
+    <p>Los datos son accesibles únicamente por el propio trabajador y por los perfiles con rol de administrador dentro de la misma empresa, para la gestión y corrección de fichajes, aprobación de vacaciones y bajas. No se ceden datos a terceros ajenos a la relación laboral, salvo obligación legal.</p>
+  </section>
+
+  <section>
+    <h2>8. Tus derechos</h2>
+    <p>Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad de tus datos, escribiendo a <a href="mailto:finance@katanamart.com" style="color:#d62828;">finance@katanamart.com</a>. También tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) si lo consideras necesario.</p>
+  </section>
+
+  <section>
+    <h2>9. Seguridad</h2>
+    <p>Aplicamos medidas técnicas y organizativas para proteger tus datos, incluyendo cifrado en tránsito, control de acceso basado en roles y políticas de seguridad a nivel de base de datos.</p>
+  </section>
+
+  <p class="updated">Última actualización: julio de 2026</p>
+
+</main>
+
+</body>
+</html>
