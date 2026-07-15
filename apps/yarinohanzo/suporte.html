@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soporte – Yari No Hanzo</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #171a21;
+    --text: #eaeaea;
+    --muted: #9aa0aa;
+    --accent: #d62828;
+    --border: #262a33;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  header {
+    padding: 48px 20px 24px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 {
+    margin: 0 0 8px;
+    font-size: 1.8rem;
+  }
+  header p {
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+  }
+  h2 {
+    font-size: 1.3rem;
+    margin-top: 40px;
+    margin-bottom: 16px;
+    border-left: 4px solid var(--accent);
+    padding-left: 12px;
+  }
+  details {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    padding: 4px 18px;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 14px 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-left: 12px;
+  }
+  details[open] summary::after {
+    content: "−";
+  }
+  details p {
+    margin: 0 0 16px;
+    color: var(--muted);
+  }
+  .contact-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    text-align: center;
+  }
+  .contact-box a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.05rem;
+  }
+  .contact-box a:hover { text-decoration: underline; }
+  .privacy-link {
+    display: inline-block;
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-decoration: underline;
+  }
+  .privacy-link a { color: var(--muted); }
+  footer-space { display: block; height: 20px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Soporte – Yari No Hanzo</h1>
+  <p>Bienvenido a la página de soporte de Yari No Hanzo, la app de control horario y fichaje conforme a la normativa vigente (RDL 8/2019 y Ley de Fichaje 2026). Aquí encontrarás respuestas a las preguntas más frecuentes y cómo contactar con nosotros.</p>
+</header>
+
+<main>
+
+  <h2>Preguntas frecuentes</h2>
+
+  <details>
+    <summary>¿Cómo registro mi entrada o salida?</summary>
+    <p>Desde la pantalla principal, pulsa el botón "Registrar entrada" o "Registrar salida". La app guardará automáticamente la hora y, si no tienes activado el modo remoto, tu ubicación.</p>
+  </details>
+
+  <details>
+    <summary>¿Por qué la app me pide acceso a la ubicación?</summary>
+    <p>La ubicación se utiliza únicamente para validar el punto de fichaje, tal como exige la normativa. Si trabajas en remoto, puedes activar el "Modo remoto" y la ubicación no se solicitará.</p>
+  </details>
+
+  <details>
+    <summary>¿Cómo funciona el acceso con huella digital o Face ID?</summary>
+    <p>Tras el primer inicio de sesión con email y contraseña, puedes activar el acceso biométrico para entrar más rápido en accesos posteriores.</p>
+  </details>
+
+  <details>
+    <summary>Me olvidé de marcar mi entrada o salida, ¿qué hago?</summary>
+    <p>Si te has dado cuenta el mismo día, puedes corregirlo tú mismo: ve a "Registro Diario" y pulsa el icono del lápiz junto al horario correspondiente para editarlo. Si te das cuenta al día siguiente o más tarde, deberás enviar una solicitud de corrección al administrador, que se encargará de modificar el registro desde el panel de administración.</p>
+  </details>
+
+  <details>
+    <summary>¿Cómo descargo mi informe mensual de horas?</summary>
+    <p>Desde la sección "Reporte mensual" puedes exportar tus horas en formato PDF o Excel.</p>
+  </details>
+
+  <details>
+    <summary>¿Cómo subo un justificante médico?</summary>
+    <p>Desde la sección de ausencias, puedes adjuntar una foto del informe médico directamente desde la cámara o la galería.</p>
+  </details>
+
+  <details>
+    <summary>¿Mis datos están protegidos?</summary>
+    <p>Sí. Puedes consultar toda la información en nuestra <a href="privacidad.html" style="color:#d62828;">Política de Privacidad</a> y en la sección de Notas Legales dentro de la app.</p>
+  </details>
+
+  <details>
+    <summary>¿Cómo recupero mi contraseña?</summary>
+    <p>Desde la pantalla de inicio de sesión, pulsa "¿Olvidaste tu contraseña?" y sigue las instrucciones enviadas a tu correo.</p>
+  </details>
+
+  <h2>Contacto</h2>
+  <div class="contact-box">
+    <p>¿No has encontrado respuesta a tu pregunta? Escríbenos a:</p>
+    <a href="mailto:finance@katanamart.com">finance@katanamart.com</a>
+    <p style="margin-top:12px; font-size:0.9rem;">Intentamos responder en un plazo de 24-48 horas laborables.</p>
+  </div>
+
+  <div style="text-align:center;">
+    <span class="privacy-link">Consulta también nuestra <a href="privacidad.html">Política de Privacidad</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>
