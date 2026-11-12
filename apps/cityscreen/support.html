@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CityScreen – Supporto</title>
+  <meta name="description" content="Hai bisogno di aiuto con CityScreen? Domande frequenti e contatti.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F2F6FA;
+      --blue: #2E7DBA;
+      --navy: #1E2A3A;
+      --red: #E53935;
+      --dark: #141C27;
+      --text: #24303D;
+      --text-soft: #5F7184;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); }
+    nav { background: var(--dark); padding: 14px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; }
+    nav a:hover { color: #7FC1F0; }
+    nav span { color: rgba(255,255,255,0.3); }
+
+    header.page-head {
+      background: linear-gradient(135deg, var(--blue) 0%, #22568A 50%, var(--navy) 100%);
+      padding: 50px 20px;
+      text-align: center;
+    }
+    header.page-head h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(2.2rem, 7vw, 3.2rem);
+      color: #fff;
+      text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+    }
+    header.page-head p { color: rgba(255,255,255,0.9); margin-top: 8px; font-weight: 600; }
+
+    main { max-width: 760px; margin: 0 auto; padding: 50px 20px 70px; }
+    main h2 { font-family: 'Fredoka One', cursive; font-size: 1.3rem; color: var(--navy); margin: 30px 0 10px; }
+    main p { font-size: 0.98rem; line-height: 1.7; color: var(--text); margin-bottom: 10px; }
+    main a { color: var(--blue); font-weight: 700; text-decoration: none; }
+    main a:hover { text-decoration: underline; }
+
+    .back-link { display: inline-block; margin-bottom: 24px; color: var(--navy); font-weight: 800; text-decoration: none; }
+    .back-link:hover { color: var(--red); }
+
+    .contact-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px 26px;
+      box-shadow: 0 4px 24px rgba(30,42,58,0.1);
+      text-align: center;
+      margin: 24px 0 40px;
+      border-top: 4px solid var(--red);
+    }
+    .contact-card .icon { font-size: 2.4rem; display: block; margin-bottom: 10px; }
+    .contact-card a.email-btn {
+      display: inline-block;
+      margin-top: 14px;
+      background: var(--blue);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .contact-card a.email-btn:hover { background: var(--navy); }
+
+    .faq-item { background: #fff; border-radius: 16px; padding: 20px 22px; margin-bottom: 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .faq-item h3 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
+    .faq-item p { margin-bottom: 0; color: var(--text-soft); font-size: 0.92rem; }
+
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); text-align: center; padding: 30px 20px; font-size: 0.9rem; }
+    footer a { color: #7FC1F0; text-decoration: none; }
+  
+    .lang-switch { display: flex; gap: 8px; margin-left: auto; }
+    .lang-switch button {
+      background: transparent; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.75);
+      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.85rem;
+      padding: 5px 12px; border-radius: 50px; cursor: pointer;
+    }
+    .lang-switch button.active { background: #fff; color: var(--dark); border-color: #fff; }
+    body:not(.l-it) [data-lang="it"], body:not(.l-en) [data-lang="en"], body:not(.l-es) [data-lang="es"] { display: none !important; }
+  </style>
+</head>
+<body class="l-it">
+
+<nav>
+  <a href="../../index.html">🛋️ AppOnTheCouch</a>
+  <span>›</span>
+  <a href="index.html">CityScreen</a>
+  <span>›</span>
+  <a href="#"><span data-lang="it">Supporto</span><span data-lang="en">Support</span><span data-lang="es">Soporte</span></a>
+  <div class="lang-switch">
+    <button data-set="it">IT</button>
+    <button data-set="en">EN</button>
+    <button data-set="es">ES</button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <h1>💬 <span data-lang="it">Supporto</span><span data-lang="en">Support</span><span data-lang="es">Soporte</span></h1>
+  <p><span data-lang="it">Ti aiutiamo a portare in tasca le strade che ami.</span><span data-lang="en">We help you keep the streets you love in your pocket.</span><span data-lang="es">Te ayudamos a llevar en el bolsillo las calles que amas.</span></p>
+</header>
+
+<main>
+  <a class="back-link" href="index.html"><span data-lang="it">← Torna a CityScreen</span><span data-lang="en">← Back to CityScreen</span><span data-lang="es">← Volver a CityScreen</span></a>
+
+  <div data-lang="it">
+    <div class="contact-card">
+      <span class="icon">📬</span>
+      <p>Hai una domanda, hai trovato un errore o vuoi suggerirci un nuovo tema di colori? Scrivici e ti risponderemo il prima possibile.</p>
+      <a class="email-btn" href="mailto:apponthecouch@gmail.com?subject=CityScreen">Scrivi al supporto</a>
+    </div>
+
+    <h2>Domande frequenti</h2>
+
+    <div class="faq-item">
+      <h3>Come si usa?</h3>
+      <p>Cerca la città, scegli i colori, sposta la mappa con un dito e zooma con due finché l'inquadratura ti piace. Poi conferma il modello del telefono e tocca «Scarica wallpaper»: lo sfondo viene salvato nell'app Foto.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Come imposto lo sfondo sul telefono?</h3>
+      <p>Apri l'immagine nell'app Foto, tocca il pulsante Condividi e scegli «Usa come sfondo». Puoi anche andare in Impostazioni › Sfondo e aggiungere un nuovo sfondo scegliendolo da Foto.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Perché nell'anteprima c'è la scritta «CityScreen»?</h3>
+      <p>È solo nell'anteprima. Lo sfondo che scarichi con il pulsante «Scarica wallpaper» è senza scritta, nella misura giusta per il tuo telefono. Per questo è meglio scaricarlo che fare uno screenshot.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Il modello del telefono non è giusto. Cosa faccio?</h3>
+      <p>L'app riconosce il modello in automatico, ma puoi sempre cambiarlo: tocca «Scegli il modello» e seleziona quello corretto prima di scaricare.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Non trovo la mia città.</h3>
+      <p>Prova a scrivere il nome in un altro modo, per esempio nella lingua locale, oppure aggiungi la regione o il paese. Puoi cercare anche paesi più piccoli, quartieri e luoghi.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Posso togliere il nome della città o le coordinate?</h3>
+      <p>Sì, puoi nascondere il nome della città e le coordinate con gli interruttori nell'editor. Per la schermata Home puoi scegliere anche la mappa senza scritte o solo il colore di sfondo.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Serve la connessione a internet?</h3>
+      <p>Sì: le mappe e la ricerca delle città arrivano da internet. Senza connessione l'app te lo segnala; quando torni online puoi riprovare.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Perché c'è la pubblicità?</h3>
+      <p>La pubblicità ci permette di mantenere l'app gratuita. Gli annunci non sono personalizzati. Trovi tutti i dettagli nella <a href="privacy.html">Privacy Policy</a>.</p>
+    </div>
+  </div>
+
+  <div data-lang="en">
+    <div class="contact-card">
+      <span class="icon">📬</span>
+      <p>Got a question, found a bug or want to suggest a new color theme? Write to us and we'll get back to you as soon as possible.</p>
+      <a class="email-btn" href="mailto:apponthecouch@gmail.com?subject=CityScreen">Contact support</a>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq-item">
+      <h3>How does it work?</h3>
+      <p>Search for a city, pick your colors, drag the map with one finger and zoom with two until you like the framing. Then confirm your phone model and tap “Download wallpaper”: the wallpaper is saved to the Photos app.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I set the wallpaper on my phone?</h3>
+      <p>Open the image in the Photos app, tap the Share button and choose “Use as Wallpaper”. You can also go to Settings › Wallpaper and add a new wallpaper from Photos.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Why does the preview say “CityScreen”?</h3>
+      <p>That's only on the preview. The wallpaper you get with the “Download wallpaper” button has no watermark and is sized for your phone. That's why downloading it is better than taking a screenshot.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>My phone model is wrong. What can I do?</h3>
+      <p>The app detects your model automatically, but you can always change it: tap “Choose model” and select the right one before downloading.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>I can't find my city.</h3>
+      <p>Try writing the name differently, for example in the local language, or add the region or country. You can also search for small towns, neighborhoods and places.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I remove the city name or the coordinates?</h3>
+      <p>Yes, you can hide the city name and the coordinates with the switches in the editor. For the Home Screen you can also choose the map without text or just the background color.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do I need an internet connection?</h3>
+      <p>Yes: maps and city search come from the internet. Without a connection the app lets you know; once you're back online you can try again.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Why are there ads?</h3>
+      <p>Ads let us keep the app free. Ads are not personalized. You can find all the details in the <a href="privacy.html">Privacy Policy</a>.</p>
+    </div>
+  </div>
+
+  <div data-lang="es">
+    <div class="contact-card">
+      <span class="icon">📬</span>
+      <p>¿Tienes una pregunta, has encontrado un error o quieres sugerirnos un nuevo tema de colores? Escríbenos y te responderemos lo antes posible.</p>
+      <a class="email-btn" href="mailto:apponthecouch@gmail.com?subject=CityScreen">Escribir a soporte</a>
+    </div>
+
+    <h2>Preguntas frecuentes</h2>
+
+    <div class="faq-item">
+      <h3>¿Cómo se usa?</h3>
+      <p>Busca la ciudad, elige los colores, mueve el mapa con un dedo y haz zoom con dos hasta que te guste el encuadre. Después confirma el modelo de tu teléfono y toca «Descargar fondo»: el fondo se guarda en la app Fotos.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Cómo pongo el fondo en mi teléfono?</h3>
+      <p>Abre la imagen en la app Fotos, toca el botón Compartir y elige «Usar como fondo de pantalla». También puedes ir a Ajustes › Fondo de pantalla y añadir un nuevo fondo desde Fotos.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Por qué en la vista previa aparece «CityScreen»?</h3>
+      <p>Solo aparece en la vista previa. El fondo que descargas con el botón «Descargar fondo» no lleva marca de agua y tiene la medida justa para tu teléfono. Por eso es mejor descargarlo que hacer una captura de pantalla.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>El modelo del teléfono no es correcto. ¿Qué hago?</h3>
+      <p>La app reconoce el modelo automáticamente, pero siempre puedes cambiarlo: toca «Elige el modelo» y selecciona el correcto antes de descargar.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>No encuentro mi ciudad.</h3>
+      <p>Prueba a escribir el nombre de otra forma, por ejemplo en el idioma local, o añade la región o el país. También puedes buscar pueblos, barrios y lugares.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Puedo quitar el nombre de la ciudad o las coordenadas?</h3>
+      <p>Sí, puedes ocultar el nombre de la ciudad y las coordenadas con los interruptores del editor. Para la pantalla de inicio también puedes elegir el mapa sin textos o solo el color de fondo.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Necesito conexión a internet?</h3>
+      <p>Sí: los mapas y la búsqueda de ciudades llegan desde internet. Sin conexión la app te avisa; cuando vuelvas a estar en línea puedes reintentarlo.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Por qué hay publicidad?</h3>
+      <p>La publicidad nos permite mantener la app gratuita. Los anuncios no son personalizados. Encontrarás todos los detalles en la <a href="privacy.html">Política de privacidad</a>.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 AppOnTheCouch · <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a> · <span data-lang="it">Valencia, Spagna</span><span data-lang="en">Valencia, Spain</span><span data-lang="es">Valencia, España</span></p>
+</footer>
+
+<script>
+  (function () {
+    var titles = { it: 'CityScreen – Supporto', en: 'CityScreen – Support', es: 'CityScreen – Soporte' };
+    function setLang(l) {
+      document.body.className = 'l-' + l;
+      document.documentElement.lang = l;
+      document.title = titles[l];
+      document.querySelectorAll('.lang-switch button').forEach(function (b) {
+        b.classList.toggle('active', b.getAttribute('data-set') === l);
+      });
+    }
+    document.querySelectorAll('.lang-switch button').forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.getAttribute('data-set')); });
+    });
+    var p = new URLSearchParams(location.search).get('lang');
+    var nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    var l = titles[p] ? p : (titles[nav] ? nav : 'en');
+    setLang(l);
+  })();
+</script>
+
+</body>
+</html>
