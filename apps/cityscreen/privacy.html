@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CityScreen – Privacy Policy</title>
-  <meta name="description" content="Privacy Policy di CityScreen, l'app che crea sfondi per il telefono con la mappa della tua città.">
+  <meta name="description" content="Privacy Policy di CityScreen · CityScreen Privacy Policy · Política de privacidad de CityScreen">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
@@ -18,6 +18,7 @@
       --text-soft: #5F7184;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); }
     nav { background: var(--dark); padding: 14px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
     nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; }
@@ -37,6 +38,11 @@
     }
     header.page-head p { color: rgba(255,255,255,0.9); margin-top: 8px; font-weight: 600; }
 
+    .flags { margin-top: 26px; display: flex; gap: 14px; justify-content: center; }
+    .flags a { display: block; width: 54px; height: 36px; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.35); border: 2px solid rgba(255,255,255,0.8); transition: transform 0.2s; }
+    .flags a:hover { transform: translateY(-3px) scale(1.05); }
+    .flags svg { width: 100%; height: 100%; display: block; }
+
     main { max-width: 760px; margin: 0 auto; padding: 50px 20px 70px; }
     main h2 {
       font-family: 'Fredoka One', cursive;
@@ -46,18 +52,26 @@
     }
     main p, main li { font-size: 0.98rem; line-height: 1.7; color: var(--text); margin-bottom: 10px; }
     main ul { padding-left: 22px; margin-bottom: 14px; }
-    main .updated { color: var(--text-soft); font-size: 0.9rem; margin-bottom: 30px; }
+    main .updated { color: var(--text-soft); font-size: 0.9rem; margin-bottom: 10px; }
     main a { color: var(--blue); font-weight: 700; text-decoration: none; }
     main a:hover { text-decoration: underline; }
 
     .back-link { display: inline-block; margin-bottom: 24px; color: var(--navy); font-weight: 800; text-decoration: none; }
     .back-link:hover { color: var(--red); }
 
+    .lang-section { scroll-margin-top: 20px; padding-top: 10px; }
+    .lang-section + .lang-section { border-top: 2px solid #dde5ee; margin-top: 40px; padding-top: 60px; }
+    .lang-head { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+    .lang-head svg { width: 42px; height: 28px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); flex-shrink: 0; }
+    main .lang-head h2 { font-size: 1.6rem; margin: 0; }
+    .top-link { display: inline-block; margin-top: 16px; font-size: 0.9rem; font-weight: 800; color: var(--text-soft); text-decoration: none; }
+    .top-link:hover { color: var(--blue); }
+
     footer { background: var(--dark); color: rgba(255,255,255,0.7); text-align: center; padding: 30px 20px; font-size: 0.9rem; }
     footer a { color: #7FC1F0; text-decoration: none; }
   </style>
 </head>
-<body>
+<body id="top">
 
 <nav>
   <a href="../../index.html">🛋️ AppOnTheCouch</a>
@@ -69,77 +83,220 @@
 
 <header class="page-head">
   <h1>🔒 Privacy Policy</h1>
-  <p>CityScreen – Le strade che ami, sempre in tasca</p>
+  <p>CityScreen</p>
+  <div class="flags"><a href="#it" title="Italiano"><svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg></a><a href="#en" title="English"><svg viewBox="0 0 60 30" preserveAspectRatio="none"><clipPath id="ukclip1"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#ukclip1)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg></a><a href="#es" title="Español"><svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="2" fill="#AA151B"/><rect y="0.5" width="3" height="1" fill="#F1BF00"/></svg></a></div>
 </header>
 
 <main>
-  <a class="back-link" href="index.html">← Torna a CityScreen</a>
-  <p class="updated">Ultimo aggiornamento: novembre 2026</p>
+  <a class="back-link" href="index.html">← CityScreen</a>
 
-  <h2>In breve</h2>
-  <p>CityScreen crea sfondi per il telefono con la mappa di una città. Non ti chiediamo di registrarti, non usiamo la tua posizione e non raccogliamo dati personali. Per funzionare l'app scarica le mappe e cerca le città tramite servizi esterni basati su OpenStreetMap, e mostra un banner pubblicitario non personalizzato fornito da Google AdMob. Qui sotto trovi cosa comporta.</p>
+  <!-- ===================== ITALIANO ===================== -->
+  <section class="lang-section" id="it" lang="it">
+    <div class="lang-head"><svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg><h2>Italiano</h2></div>
+    <p class="updated">Ultimo aggiornamento: novembre 2026</p>
 
-  <h2>Titolare del trattamento</h2>
-  <p>AppOnTheCouch, Valencia (Spagna). Contatto: <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a>.</p>
+    <h2>In breve</h2>
+    <p>CityScreen crea sfondi per il telefono con la mappa di una città. Non ti chiediamo di registrarti, non usiamo la tua posizione e non raccogliamo dati personali. Per funzionare l'app scarica le mappe e cerca le città tramite servizi esterni basati su OpenStreetMap, e mostra un banner pubblicitario non personalizzato fornito da Google AdMob. Qui sotto trovi cosa comporta.</p>
 
-  <h2>Ricerca delle città e mappe</h2>
-  <ul>
-    <li>Quando cerchi una città, il testo che scrivi viene inviato a un servizio di ricerca geografica basato su OpenStreetMap, che restituisce i luoghi corrispondenti.</li>
-    <li>Le mappe vengono scaricate da <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>, che fornisce i dati di OpenStreetMap.</li>
-    <li>Come per qualsiasi sito o servizio online, questi fornitori ricevono il tuo indirizzo IP e i dati tecnici della richiesta (per esempio quale zona della mappa viene scaricata). Non ricevono il tuo nome, la tua email né la tua posizione.</li>
-    <li>L'app <strong>non chiede l'accesso alla tua posizione</strong>: la città la scegli tu.</li>
-  </ul>
-  <p>Dati delle mappe © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>.</p>
+    <h2>Titolare del trattamento</h2>
+    <p>AppOnTheCouch, Valencia (Spagna). Contatto: <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a>.</p>
 
-  <h2>Modello del telefono</h2>
-  <p>Per preparare lo sfondo nella misura giusta, l'app legge il modello del tuo telefono <strong>solo sul dispositivo</strong>. Questa informazione non viene salvata né inviata a noi.</p>
+    <h2>Ricerca delle città e mappe</h2>
+    <ul>
+      <li>Quando cerchi una città, il testo che scrivi viene inviato a un servizio di ricerca geografica basato su OpenStreetMap, che restituisce i luoghi corrispondenti.</li>
+      <li>Le mappe vengono scaricate da <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>, che fornisce i dati di OpenStreetMap.</li>
+      <li>Come per qualsiasi sito o servizio online, questi fornitori ricevono il tuo indirizzo IP e i dati tecnici della richiesta (per esempio quale zona della mappa viene scaricata). Non ricevono il tuo nome, la tua email né la tua posizione.</li>
+      <li>L'app <strong>non chiede l'accesso alla tua posizione</strong>: la città la scegli tu.</li>
+    </ul>
+    <p>Dati delle mappe © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>.</p>
 
-  <h2>Foto</h2>
-  <ul>
-    <li>Quando scarichi uno sfondo, l'app ti chiede il permesso di <strong>aggiungere</strong> immagini all'app Foto, e lo usa solo per salvare lo sfondo che hai creato.</li>
-    <li>L'app <strong>non legge</strong> le foto della tua libreria.</li>
-    <li>Puoi revocare il permesso in qualsiasi momento da Impostazioni › CityScreen › Foto.</li>
-  </ul>
+    <h2>Modello del telefono</h2>
+    <p>Per preparare lo sfondo nella misura giusta, l'app legge il modello del tuo telefono <strong>solo sul dispositivo</strong>. Questa informazione non viene salvata né inviata a noi.</p>
 
-  <h2>Screenshot</h2>
-  <p>Se fai uno screenshot mentre usi l'app, CityScreen se ne accorge e ti suggerisce di usare il pulsante «Scarica wallpaper». L'app riceve solo l'avviso che è stato fatto uno screenshot: <strong>non vede né salva</strong> l'immagine.</p>
+    <h2>Foto</h2>
+    <ul>
+      <li>Quando scarichi uno sfondo, l'app ti chiede il permesso di <strong>aggiungere</strong> immagini all'app Foto, e lo usa solo per salvare lo sfondo che hai creato.</li>
+      <li>L'app <strong>non legge</strong> le foto della tua libreria.</li>
+      <li>Puoi revocare il permesso in qualsiasi momento da Impostazioni › CityScreen › Foto.</li>
+    </ul>
 
-  <h2>Pubblicità (Google AdMob)</h2>
-  <p>Per mantenere l'app gratuita mostriamo un banner pubblicitario tramite Google AdMob, servizio di Google Ireland Limited. Gli annunci sono <strong>non personalizzati</strong>: non vengono scelti in base al tuo profilo o alla tua attività in altre app, e l'app non ti chiede l'autorizzazione al tracciamento di Apple.</p>
-  <p>Per mostrare gli annunci, limitare le frodi e misurarne il funzionamento, Google può comunque trattare alcuni dati tecnici, come:</p>
-  <ul>
-    <li>indirizzo IP e una posizione approssimativa ricavata da esso;</li>
-    <li>informazioni sul dispositivo (modello, sistema operativo, lingua) e identificativi tecnici dell'app;</li>
-    <li>dati sull'interazione con gli annunci (visualizzazioni e clic) e dati diagnostici.</li>
-  </ul>
-  <p>Agli utenti dello Spazio economico europeo, del Regno Unito e della Svizzera l'app mostra al primo avvio il modulo di consenso di Google, in cui puoi scegliere come vengono trattati i tuoi dati per la pubblicità. Per saperne di più: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">come Google utilizza i dati nelle app dei partner</a> e la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy di Google</a>.</p>
+    <h2>Screenshot</h2>
+    <p>Se fai uno screenshot mentre usi l'app, CityScreen se ne accorge e ti suggerisce di usare il pulsante «Scarica wallpaper». L'app riceve solo l'avviso che è stato fatto uno screenshot: <strong>non vede né salva</strong> l'immagine.</p>
 
-  <h2>Caratteri tipografici</h2>
-  <p>Alcuni caratteri usati nell'app vengono scaricati da Google Fonts al primo utilizzo. Per farlo, Google riceve l'indirizzo IP del dispositivo.</p>
+    <h2>Pubblicità (Google AdMob)</h2>
+    <p>Per mantenere l'app gratuita mostriamo un banner pubblicitario tramite Google AdMob, servizio di Google Ireland Limited. Gli annunci sono <strong>non personalizzati</strong>: non vengono scelti in base al tuo profilo o alla tua attività in altre app, e l'app non ti chiede l'autorizzazione al tracciamento di Apple.</p>
+    <p>Per mostrare gli annunci, limitare le frodi e misurarne il funzionamento, Google può comunque trattare alcuni dati tecnici, come:</p>
+    <ul>
+      <li>indirizzo IP e una posizione approssimativa ricavata da esso;</li>
+      <li>informazioni sul dispositivo (modello, sistema operativo, lingua) e identificativi tecnici dell'app;</li>
+      <li>dati sull'interazione con gli annunci (visualizzazioni e clic) e dati diagnostici.</li>
+    </ul>
+    <p>Agli utenti dello Spazio economico europeo, del Regno Unito e della Svizzera l'app mostra al primo avvio il modulo di consenso di Google, in cui puoi scegliere come vengono trattati i tuoi dati per la pubblicità. Per saperne di più: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">come Google utilizza i dati nelle app dei partner</a> e la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy di Google</a>.</p>
 
-  <h2>Cosa non facciamo</h2>
-  <ul>
-    <li>Non chiediamo account, email o altri dati personali.</li>
-    <li>Non conserviamo le città che cerchi né gli sfondi che crei: restano solo sul tuo telefono.</li>
-    <li>Non vendiamo dati a nessuno.</li>
-    <li>Non usiamo strumenti di analisi o tracciamento nostri.</li>
-  </ul>
+    <h2>Caratteri tipografici</h2>
+    <p>Alcuni caratteri usati nell'app vengono scaricati da Google Fonts al primo utilizzo. Per farlo, Google riceve l'indirizzo IP del dispositivo.</p>
 
-  <h2>I tuoi diritti</h2>
-  <p>In base al GDPR puoi chiedere accesso, rettifica, cancellazione o limitazione dei tuoi dati e opporti al trattamento. Poiché non conserviamo dati personali, per i dati trattati da Google per la pubblicità puoi gestire le tue scelte nel modulo di consenso o tramite gli strumenti di Google. Per qualsiasi richiesta scrivici a <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a>. Hai anche il diritto di presentare reclamo all'autorità di controllo, in Spagna l'Agencia Española de Protección de Datos (aepd.es).</p>
+    <h2>Cosa non facciamo</h2>
+    <ul>
+      <li>Non chiediamo account, email o altri dati personali.</li>
+      <li>Non conserviamo le città che cerchi né gli sfondi che crei: restano solo sul tuo telefono.</li>
+      <li>Non vendiamo dati a nessuno.</li>
+      <li>Non usiamo strumenti di analisi o tracciamento nostri.</li>
+    </ul>
 
-  <h2>Minori</h2>
-  <p>L'app non è rivolta a minori di 13 anni e non raccoglie consapevolmente dati da minori.</p>
+    <h2>I tuoi diritti</h2>
+    <p>In base al GDPR puoi chiedere accesso, rettifica, cancellazione o limitazione dei tuoi dati e opporti al trattamento. Poiché non conserviamo dati personali, per i dati trattati da Google per la pubblicità puoi gestire le tue scelte nel modulo di consenso o tramite gli strumenti di Google. Per qualsiasi richiesta scrivici a <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a>. Hai anche il diritto di presentare reclamo all'autorità di controllo, in Spagna l'Agencia Española de Protección de Datos (aepd.es).</p>
 
-  <h2>Modifiche</h2>
-  <p>Eventuali aggiornamenti a questa policy saranno pubblicati su questa pagina con la nuova data di aggiornamento.</p>
+    <h2>Minori</h2>
+    <p>L'app non è rivolta a minori di 13 anni e non raccoglie consapevolmente dati da minori.</p>
 
-  <h2>Contatti</h2>
-  <p>Domande su questa policy? Scrivici a <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a>.</p>
+    <h2>Modifiche</h2>
+    <p>Eventuali aggiornamenti a questa policy saranno pubblicati su questa pagina con la nuova data di aggiornamento.</p>
+
+    <h2>Contatti</h2>
+    <p>Domande su questa policy? Scrivici a <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a>.</p>
+    <a class="top-link" href="#top">↑ Torna su</a>
+  </section>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <section class="lang-section" id="en" lang="en">
+    <div class="lang-head"><svg viewBox="0 0 60 30" preserveAspectRatio="none"><clipPath id="ukclip2"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#ukclip2)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg><h2>English</h2></div>
+    <p class="updated">Last updated: November 2026</p>
+
+    <h2>In short</h2>
+    <p>CityScreen creates phone wallpapers with the map of a city. We don't ask you to sign up, we don't use your location and we don't collect personal data. To work, the app downloads maps and searches for cities through external services based on OpenStreetMap, and shows a non-personalized advertising banner provided by Google AdMob. Below you'll find what this means.</p>
+
+    <h2>Data controller</h2>
+    <p>AppOnTheCouch, Valencia (Spain). Contact: <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a>.</p>
+
+    <h2>City search and maps</h2>
+    <ul>
+      <li>When you search for a city, the text you type is sent to a geographic search service based on OpenStreetMap, which returns the matching places.</li>
+      <li>Maps are downloaded from <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>, which provides OpenStreetMap data.</li>
+      <li>As with any website or online service, these providers receive your IP address and the technical data of the request (for example, which area of the map is being downloaded). They do not receive your name, your email or your location.</li>
+      <li>The app <strong>does not ask for access to your location</strong>: you choose the city.</li>
+    </ul>
+    <p>Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>.</p>
+
+    <h2>Phone model</h2>
+    <p>To prepare the wallpaper in the right size, the app reads your phone model <strong>on the device only</strong>. This information is not stored or sent to us.</p>
+
+    <h2>Photos</h2>
+    <ul>
+      <li>When you download a wallpaper, the app asks for permission to <strong>add</strong> images to the Photos app, and uses it only to save the wallpaper you created.</li>
+      <li>The app <strong>does not read</strong> the photos in your library.</li>
+      <li>You can revoke this permission at any time in Settings › CityScreen › Photos.</li>
+    </ul>
+
+    <h2>Screenshots</h2>
+    <p>If you take a screenshot while using the app, CityScreen notices it and suggests using the “Download wallpaper” button. The app only receives a notification that a screenshot was taken: it <strong>does not see or save</strong> the image.</p>
+
+    <h2>Advertising (Google AdMob)</h2>
+    <p>To keep the app free, we show an advertising banner through Google AdMob, a service of Google Ireland Limited. Ads are <strong>not personalized</strong>: they are not chosen based on your profile or your activity in other apps, and the app does not ask for Apple's tracking permission.</p>
+    <p>To show ads, prevent fraud and measure their performance, Google may still process some technical data, such as:</p>
+    <ul>
+      <li>IP address and an approximate location derived from it;</li>
+      <li>device information (model, operating system, language) and technical app identifiers;</li>
+      <li>data on interaction with ads (views and clicks) and diagnostic data.</li>
+    </ul>
+    <p>Users in the European Economic Area, the United Kingdom and Switzerland are shown Google's consent form on first launch, where they can choose how their data is processed for advertising. Learn more: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">how Google uses data from partner apps</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+
+    <h2>Fonts</h2>
+    <p>Some fonts used in the app are downloaded from Google Fonts the first time they are used. To do so, Google receives the device's IP address.</p>
+
+    <h2>What we don't do</h2>
+    <ul>
+      <li>We don't ask for accounts, email or other personal data.</li>
+      <li>We don't store the cities you search for or the wallpapers you create: they stay only on your phone.</li>
+      <li>We don't sell data to anyone.</li>
+      <li>We don't use our own analytics or tracking tools.</li>
+    </ul>
+
+    <h2>Your rights</h2>
+    <p>Under the GDPR you can request access to, rectification, erasure or restriction of your data, and object to its processing. Since we don't store personal data, for the data processed by Google for advertising you can manage your choices in the consent form or through Google's tools. For any request, write to us at <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a>. You also have the right to lodge a complaint with the supervisory authority, in Spain the Agencia Española de Protección de Datos (aepd.es).</p>
+
+    <h2>Children</h2>
+    <p>The app is not directed at children under 13 and does not knowingly collect data from children.</p>
+
+    <h2>Changes</h2>
+    <p>Any updates to this policy will be published on this page with the new update date.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy? Write to us at <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a>.</p>
+    <a class="top-link" href="#top">↑ Back to top</a>
+  </section>
+
+  <!-- ===================== ESPAÑOL ===================== -->
+  <section class="lang-section" id="es" lang="es">
+    <div class="lang-head"><svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="2" fill="#AA151B"/><rect y="0.5" width="3" height="1" fill="#F1BF00"/></svg><h2>Español</h2></div>
+    <p class="updated">Última actualización: noviembre de 2026</p>
+
+    <h2>En resumen</h2>
+    <p>CityScreen crea fondos de pantalla para el teléfono con el mapa de una ciudad. No te pedimos que te registres, no usamos tu ubicación y no recogemos datos personales. Para funcionar, la app descarga los mapas y busca las ciudades a través de servicios externos basados en OpenStreetMap, y muestra un banner publicitario no personalizado proporcionado por Google AdMob. A continuación te explicamos lo que esto implica.</p>
+
+    <h2>Responsable del tratamiento</h2>
+    <p>AppOnTheCouch, Valencia (España). Contacto: <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a>.</p>
+
+    <h2>Búsqueda de ciudades y mapas</h2>
+    <ul>
+      <li>Cuando buscas una ciudad, el texto que escribes se envía a un servicio de búsqueda geográfica basado en OpenStreetMap, que devuelve los lugares correspondientes.</li>
+      <li>Los mapas se descargan de <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>, que proporciona los datos de OpenStreetMap.</li>
+      <li>Como ocurre con cualquier sitio web o servicio en línea, estos proveedores reciben tu dirección IP y los datos técnicos de la solicitud (por ejemplo, qué zona del mapa se descarga). No reciben tu nombre, tu correo electrónico ni tu ubicación.</li>
+      <li>La app <strong>no pide acceso a tu ubicación</strong>: la ciudad la eliges tú.</li>
+    </ul>
+    <p>Datos de los mapas © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">colaboradores de OpenStreetMap</a>.</p>
+
+    <h2>Modelo del teléfono</h2>
+    <p>Para preparar el fondo con la medida adecuada, la app lee el modelo de tu teléfono <strong>solo en el dispositivo</strong>. Esta información no se guarda ni se nos envía.</p>
+
+    <h2>Fotos</h2>
+    <ul>
+      <li>Cuando descargas un fondo, la app te pide permiso para <strong>añadir</strong> imágenes a la app Fotos, y lo usa solo para guardar el fondo que has creado.</li>
+      <li>La app <strong>no lee</strong> las fotos de tu biblioteca.</li>
+      <li>Puedes retirar el permiso en cualquier momento desde Ajustes › CityScreen › Fotos.</li>
+    </ul>
+
+    <h2>Capturas de pantalla</h2>
+    <p>Si haces una captura de pantalla mientras usas la app, CityScreen lo detecta y te sugiere usar el botón «Descargar fondo». La app solo recibe el aviso de que se ha hecho una captura: <strong>no ve ni guarda</strong> la imagen.</p>
+
+    <h2>Publicidad (Google AdMob)</h2>
+    <p>Para mantener la app gratuita mostramos un banner publicitario a través de Google AdMob, servicio de Google Ireland Limited. Los anuncios <strong>no son personalizados</strong>: no se eligen en función de tu perfil ni de tu actividad en otras apps, y la app no te pide la autorización de seguimiento de Apple.</p>
+    <p>Para mostrar los anuncios, prevenir fraudes y medir su funcionamiento, Google puede tratar igualmente algunos datos técnicos, como:</p>
+    <ul>
+      <li>la dirección IP y una ubicación aproximada obtenida a partir de ella;</li>
+      <li>información del dispositivo (modelo, sistema operativo, idioma) e identificadores técnicos de la app;</li>
+      <li>datos sobre la interacción con los anuncios (visualizaciones y clics) y datos de diagnóstico.</li>
+    </ul>
+    <p>A los usuarios del Espacio Económico Europeo, el Reino Unido y Suiza la app les muestra en el primer inicio el formulario de consentimiento de Google, donde pueden elegir cómo se tratan sus datos con fines publicitarios. Más información: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">cómo utiliza Google los datos de las apps de sus socios</a> y la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad de Google</a>.</p>
+
+    <h2>Tipografías</h2>
+    <p>Algunas tipografías usadas en la app se descargan de Google Fonts la primera vez que se usan. Para ello, Google recibe la dirección IP del dispositivo.</p>
+
+    <h2>Lo que no hacemos</h2>
+    <ul>
+      <li>No pedimos cuentas, correo electrónico ni otros datos personales.</li>
+      <li>No guardamos las ciudades que buscas ni los fondos que creas: se quedan solo en tu teléfono.</li>
+      <li>No vendemos datos a nadie.</li>
+      <li>No usamos herramientas propias de análisis o seguimiento.</li>
+    </ul>
+
+    <h2>Tus derechos</h2>
+    <p>De acuerdo con el RGPD puedes solicitar el acceso, la rectificación, la supresión o la limitación de tus datos y oponerte a su tratamiento. Como no conservamos datos personales, para los datos tratados por Google con fines publicitarios puedes gestionar tus preferencias en el formulario de consentimiento o mediante las herramientas de Google. Para cualquier solicitud escríbenos a <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a>. También tienes derecho a presentar una reclamación ante la autoridad de control, en España la Agencia Española de Protección de Datos (aepd.es).</p>
+
+    <h2>Menores</h2>
+    <p>La app no está dirigida a menores de 13 años y no recoge conscientemente datos de menores.</p>
+
+    <h2>Cambios</h2>
+    <p>Las posibles actualizaciones de esta política se publicarán en esta página con la nueva fecha de actualización.</p>
+
+    <h2>Contacto</h2>
+    <p>¿Tienes preguntas sobre esta política? Escríbenos a <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a>.</p>
+    <a class="top-link" href="#top">↑ Volver arriba</a>
+  </section>
 </main>
 
 <footer>
-  <p>© 2026 AppOnTheCouch · <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a> · Valencia, Spagna</p>
+  <p>© 2026 AppOnTheCouch · <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a> · Valencia</p>
 </footer>
 
 </body>
