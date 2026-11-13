@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CityScreen – Le strade che ami, sempre in tasca</title>
+  <meta name="description" content="CityScreen crea sfondi per il telefono con la mappa di qualsiasi città del mondo, nella misura giusta per il tuo modello.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F2F6FA;
+      --blue: #2E7DBA;
+      --navy: #1E2A3A;
+      --red: #E53935;
+      --green: #4CAF50;
+      --dark: #141C27;
+      --text: #24303D;
+      --text-soft: #5F7184;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+    nav { background: var(--dark); padding: 14px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; }
+    nav a:hover { color: #7FC1F0; }
+    nav span { color: rgba(255,255,255,0.3); }
+
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 0%, #22568A 50%, var(--navy) 100%);
+      padding: 60px 20px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.06'%3E%3Cpath d='M0 30h60M30 0v60'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero img.icon {
+      width: 130px;
+      height: 130px;
+      border-radius: 30px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+      margin-bottom: 24px;
+      animation: pop 0.5s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes pop { from{transform:scale(0.5);opacity:0} to{transform:scale(1);opacity:1} }
+    .hero h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(3rem, 10vw, 6rem);
+      color: #fff;
+      text-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+      letter-spacing: 2px;
+    }
+    .hero .tagline {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      color: rgba(255,255,255,0.95);
+      font-weight: 800;
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: 50px;
+      background: rgba(0,0,0,0.2);
+      margin-top: 16px;
+    }
+    .store-buttons { margin-top: 30px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .store-btn {
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.5);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .store-btn .soon {
+      font-size: 0.7rem;
+      font-weight: 800;
+      background: rgba(255,255,255,0.9);
+      color: var(--navy);
+      padding: 2px 8px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .wave { position: absolute; bottom: -2px; left: 0; right: 0; height: 60px; }
+
+    main { max-width: 860px; margin: 0 auto; padding: 60px 20px; }
+    .section-title { font-family: 'Fredoka One', cursive; font-size: 2rem; color: var(--navy); margin-bottom: 24px; }
+
+    .intro { font-size: 1.08rem; line-height: 1.75; margin-bottom: 50px; }
+
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-bottom: 60px; }
+    .step {
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 24px rgba(30,42,58,0.1);
+      text-align: center;
+      border-top: 4px solid var(--red);
+    }
+    .step .num { font-family: 'Fredoka One', cursive; font-size: 2.5rem; color: var(--blue); line-height: 1; margin-bottom: 10px; }
+    .step h4 { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; color: var(--dark); }
+    .step p { font-size: 0.92rem; color: #5a6672; line-height: 1.5; }
+
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 60px; }
+    .feature { background: #fff; border-radius: 20px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .feature .emoji { font-size: 2rem; display: block; margin-bottom: 8px; }
+    .feature h4 { font-size: 1.05rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .feature p { font-size: 0.92rem; color: var(--text-soft); line-height: 1.55; }
+
+    .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px; }
+    .link-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--dark);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      font-weight: 800;
+      font-size: 1rem;
+      border: 2px solid transparent;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .link-card:hover { border-color: var(--blue); transform: translateY(-3px); }
+    .link-card .icon { font-size: 2rem; display: block; margin-bottom: 10px; }
+
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); text-align: center; padding: 30px 20px; font-size: 0.9rem; }
+    footer a { color: #7FC1F0; text-decoration: none; }
+  
+    .flags { margin-top: 26px; display: flex; gap: 14px; justify-content: center; }
+    .flags a { display: block; width: 54px; height: 36px; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.35); border: 2px solid rgba(255,255,255,0.8); transition: transform 0.2s; }
+    .flags a:hover { transform: translateY(-3px) scale(1.05); }
+    .flags svg { width: 100%; height: 100%; display: block; }
+    .lang-section { scroll-margin-top: 20px; padding-top: 10px; }
+    .lang-section + .lang-section { border-top: 2px solid #dde5ee; margin-top: 30px; padding-top: 60px; }
+    .lang-head { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+    .lang-head svg { width: 42px; height: 28px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+    .lang-head h2 { font-family: 'Fredoka One', cursive; font-size: 1.6rem; color: var(--navy); }
+    .slogan { font-weight: 800; color: var(--blue); font-size: 1.15rem; margin-bottom: 20px; }
+    .top-link { display: inline-block; margin-top: 10px; font-size: 0.9rem; font-weight: 800; color: var(--text-soft); text-decoration: none; }
+    .top-link:hover { color: var(--blue); }
+  </style>
+</head>
+<body id="top">
+
+<nav>
+  <a href="../../index.html">🛋️ AppOnTheCouch</a>
+  <span>›</span>
+  <a href="#">CityScreen</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <img src="cityscreen_icona.png" alt="CityScreen" class="icon">
+    <h1>CityScreen</h1>
+    <div class="store-buttons">
+      <span class="store-btn">📱 App Store <span class="soon">Presto · Soon · Pronto</span></span>
+    </div>
+    <div class="flags"><a href="#it" title="Italiano"><svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg></a><a href="#en" title="English"><svg viewBox="0 0 60 30" preserveAspectRatio="none"><clipPath id="ukclip1"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#ukclip1)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg></a><a href="#es" title="Español"><svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="2" fill="#AA151B"/><rect y="0.5" width="3" height="1" fill="#F1BF00"/></svg></a></div>
+  </div>
+  <svg class="wave" viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C300,60 900,0 1200,30 L1200,60 L0,60 Z" fill="#F2F6FA"/>
+  </svg>
+</div>
+
+<main>
+
+  <section class="lang-section" id="it" lang="it">
+    <div class="lang-head"><svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg><h2>Italiano</h2></div>
+    <p class="slogan">🗺️ Le strade che ami, sempre in tasca</p>
+    <p class="intro">La città in cui sei nato, quella in cui vivi o quella di cui ti sei innamorato in vacanza: con CityScreen la sua mappa diventa lo sfondo del tuo telefono. Un disegno pulito ed elegante, senza nomi delle vie, solo la forma della città, nei colori che preferisci e nella misura esatta del tuo modello.</p>
+
+    <h3 class="section-title">🔍 Come funziona</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>Cerca la città</h4>
+        <p>Qualsiasi città o luogo del mondo, anche il tuo paese.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>Scegli i colori</h4>
+        <p>Scuro, Bianco e nero, Colori o Tramonto. Sposta e zooma la mappa come preferisci.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>Conferma il telefono</h4>
+        <p>L'app riconosce il tuo modello da sola, così lo sfondo ha la misura giusta.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h4>Scarica lo sfondo</h4>
+        <p>Lo trovi in Foto, pronto da impostare sulla schermata di blocco o sulla Home.</p>
+      </div>
+    </div>
+
+    <h3 class="section-title">✨ In più</h3>
+    <div class="features">
+      <div class="feature">
+        <span class="emoji">🎨</span>
+        <h4>Quattro temi</h4>
+        <p>Dall'oro su blu notte al tramonto: scegli lo stile che ti somiglia.</p>
+      </div>
+      <div class="feature">
+        <span class="emoji">🏠</span>
+        <h4>Blocco e Home</h4>
+        <p>Per la Home puoi avere la mappa senza scritte o solo il colore abbinato. Nome della città e coordinate si possono nascondere.</p>
+      </div>
+      <div class="feature">
+        <span class="emoji">🔒</span>
+        <h4>Rispetta la tua privacy</h4>
+        <p>Nessun account, nessuna posizione richiesta. Pubblicità non personalizzata.</p>
+      </div>
+    </div>
+
+    <h3 class="section-title">🔗 Informazioni legali</h3>
+    <div class="link-grid">
+      <a href="privacy.html" class="link-card"><span class="icon">🔒</span>Privacy Policy</a>
+      <a href="support.html?lang=it" class="link-card"><span class="icon">💬</span>Supporto</a>
+    </div>
+    <p style="font-size:0.85rem;color:var(--text-soft);text-align:center;margin-top:20px;">Dati delle mappe © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700;text-decoration:none;">OpenStreetMap contributors</a></p>
+    <a href="#top" class="top-link">↑ Torna su</a>
+  </section>
+
+  <section class="lang-section" id="en" lang="en">
+    <div class="lang-head"><svg viewBox="0 0 60 30" preserveAspectRatio="none"><clipPath id="ukclip2"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#ukclip2)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg><h2>English</h2></div>
+    <p class="slogan">🗺️ The streets you love, always in your pocket</p>
+    <p class="intro">The city where you were born, the one you live in, or the one you fell in love with on holiday: with CityScreen its map becomes your phone's wallpaper. A clean, elegant design with no street names, just the shape of the city, in the colors you like and sized exactly for your phone model.</p>
+
+    <h3 class="section-title">🔍 How it works</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>Search for a city</h4>
+        <p>Any city or place in the world, even your hometown.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>Pick your colors</h4>
+        <p>Dark, Black & White, Colors or Sunset. Drag and zoom the map the way you like.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>Confirm your phone</h4>
+        <p>The app detects your model automatically, so the wallpaper fits perfectly.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h4>Download the wallpaper</h4>
+        <p>It's saved to Photos, ready to set on your Lock Screen or Home Screen.</p>
+      </div>
+    </div>
+
+    <h3 class="section-title">✨ Extras</h3>
+    <div class="features">
+      <div class="feature">
+        <span class="emoji">🎨</span>
+        <h4>Four themes</h4>
+        <p>From gold on midnight blue to sunset: pick the style that suits you.</p>
+      </div>
+      <div class="feature">
+        <span class="emoji">🏠</span>
+        <h4>Lock and Home</h4>
+        <p>For the Home Screen you can choose the map without text or just a matching color. City name and coordinates can be hidden.</p>
+      </div>
+      <div class="feature">
+        <span class="emoji">🔒</span>
+        <h4>Respects your privacy</h4>
+        <p>No account, no location access. Non-personalized ads.</p>
+      </div>
+    </div>
+
+    <h3 class="section-title">🔗 Legal information</h3>
+    <div class="link-grid">
+      <a href="privacy.html" class="link-card"><span class="icon">🔒</span>Privacy Policy</a>
+      <a href="support.html?lang=en" class="link-card"><span class="icon">💬</span>Support</a>
+    </div>
+    <p style="font-size:0.85rem;color:var(--text-soft);text-align:center;margin-top:20px;">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700;text-decoration:none;">OpenStreetMap contributors</a></p>
+    <a href="#top" class="top-link">↑ Back to top</a>
+  </section>
+
+  <section class="lang-section" id="es" lang="es">
+    <div class="lang-head"><svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="2" fill="#AA151B"/><rect y="0.5" width="3" height="1" fill="#F1BF00"/></svg><h2>Español</h2></div>
+    <p class="slogan">🗺️ Las calles que amas, siempre en tu bolsillo</p>
+    <p class="intro">La ciudad donde naciste, en la que vives o de la que te enamoraste en vacaciones: con CityScreen su mapa se convierte en el fondo de tu teléfono. Un diseño limpio y elegante, sin nombres de calles, solo la forma de la ciudad, en los colores que prefieras y a la medida exacta de tu modelo.</p>
+
+    <h3 class="section-title">🔍 Cómo funciona</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>Busca la ciudad</h4>
+        <p>Cualquier ciudad o lugar del mundo, incluso tu pueblo.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>Elige los colores</h4>
+        <p>Oscuro, Blanco y negro, Colores o Atardecer. Mueve y haz zoom en el mapa a tu gusto.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>Confirma tu teléfono</h4>
+        <p>La app reconoce tu modelo automáticamente, para que el fondo encaje perfecto.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h4>Descarga el fondo</h4>
+        <p>Lo encuentras en Fotos, listo para ponerlo en la pantalla de bloqueo o de inicio.</p>
+      </div>
+    </div>
+
+    <h3 class="section-title">✨ Además</h3>
+    <div class="features">
+      <div class="feature">
+        <span class="emoji">🎨</span>
+        <h4>Cuatro temas</h4>
+        <p>Del dorado sobre azul noche al atardecer: elige el estilo que va contigo.</p>
+      </div>
+      <div class="feature">
+        <span class="emoji">🏠</span>
+        <h4>Bloqueo e inicio</h4>
+        <p>Para la pantalla de inicio puedes elegir el mapa sin textos o solo el color a juego. El nombre de la ciudad y las coordenadas se pueden ocultar.</p>
+      </div>
+      <div class="feature">
+        <span class="emoji">🔒</span>
+        <h4>Respeta tu privacidad</h4>
+        <p>Sin cuenta, sin acceso a tu ubicación. Publicidad no personalizada.</p>
+      </div>
+    </div>
+
+    <h3 class="section-title">🔗 Información legal</h3>
+    <div class="link-grid">
+      <a href="privacy.html" class="link-card"><span class="icon">🔒</span>Política de privacidad</a>
+      <a href="support.html?lang=es" class="link-card"><span class="icon">💬</span>Soporte</a>
+    </div>
+    <p style="font-size:0.85rem;color:var(--text-soft);text-align:center;margin-top:20px;">Datos de los mapas © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700;text-decoration:none;">OpenStreetMap contributors</a></p>
+    <a href="#top" class="top-link">↑ Volver arriba</a>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 AppOnTheCouch · <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a> · Valencia</p>
+</footer>
+
+</body>
+</html>
