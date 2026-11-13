@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyLactoBro – Conta il lattosio, pasto dopo pasto</title>
+  <meta name="description" content="MyLactoBro è un contatore di lattosio per chi è intollerante: sommi gli alimenti di un pasto e li confronti con la soglia che hai deciso tu. Non è un dispositivo medico.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F6F4FB;
+      --accent: #FFD447;
+      --night: #14142B;
+      --panel: #23234A;
+      --dark: #0F0F22;
+      --icon-bg: #121F45;
+      --text: #24243A;
+      --text-soft: #5F5C78;
+      --link: #3A3A9E;
+      --green: #3FBF5F;
+      --yellow: #FFD447;
+      --orange: #FF9F36;
+      --red: #E5484D;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+    nav { background: var(--dark); padding: 14px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; }
+    nav a:hover { color: var(--accent); }
+    nav span { color: rgba(255,255,255,0.3); }
+
+    .hero {
+      background: linear-gradient(135deg, var(--panel) 0%, var(--icon-bg) 50%, var(--night) 100%);
+      padding: 60px 20px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.35) 1px, transparent 1.5px);
+      background-size: 46px 46px;
+      opacity: 0.35;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero img.icon {
+      width: 130px;
+      height: 130px;
+      border-radius: 30px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+      margin-bottom: 24px;
+      image-rendering: pixelated;
+      animation: pop 0.5s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes pop { from{transform:scale(0.5);opacity:0} to{transform:scale(1);opacity:1} }
+    .hero h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(2.6rem, 9vw, 5rem);
+      color: var(--accent);
+      text-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+      letter-spacing: 1px;
+    }
+    .hero .tagline {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      color: rgba(255,255,255,0.95);
+      font-weight: 800;
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: 50px;
+      background: rgba(0,0,0,0.25);
+      margin-top: 16px;
+    }
+
+    /* Barra di energia, come nell'app */
+    .energy { display: flex; gap: 4px; justify-content: center; margin: 28px auto 0; max-width: 360px; }
+    .energy i { flex: 1; height: 18px; border: 2px solid rgba(255,255,255,0.8); }
+    .energy i.g { background: var(--green); }
+    .energy i.y { background: var(--yellow); }
+    .energy i.o { background: var(--orange); }
+    .energy i.e { background: transparent; }
+    .energy-label { color: rgba(255,255,255,0.75); font-size: 0.85rem; margin-top: 8px; font-weight: 600; }
+
+    .store-buttons { margin-top: 30px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .store-btn {
+      background: rgba(255,255,255,0.12);
+      border: 2px solid rgba(255,255,255,0.5);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .store-btn .soon {
+      font-size: 0.7rem;
+      font-weight: 800;
+      background: var(--accent);
+      color: var(--night);
+      padding: 2px 8px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .wave { position: absolute; bottom: -2px; left: 0; right: 0; height: 60px; }
+
+    main { max-width: 860px; margin: 0 auto; padding: 60px 20px; }
+    .section-title { font-family: 'Fredoka One', cursive; font-size: 2rem; color: var(--night); margin-bottom: 24px; }
+
+    .intro { font-size: 1.08rem; line-height: 1.75; margin-bottom: 50px; }
+
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 60px; }
+    .step {
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 24px rgba(20,20,43,0.1);
+      text-align: center;
+      border-top: 4px solid var(--accent);
+    }
+    .step .num { font-family: 'Fredoka One', cursive; font-size: 2.5rem; color: var(--link); line-height: 1; margin-bottom: 10px; }
+    .step h4 { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; color: var(--dark); }
+    .step p { font-size: 0.92rem; color: var(--text-soft); line-height: 1.5; }
+
+    .is-isnt { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
+    .box { background: #fff; border-radius: 20px; padding: 26px 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .box.yes { border-left: 6px solid var(--green); }
+    .box.no { border-left: 6px solid var(--red); }
+    .box h3 { font-family: 'Fredoka One', cursive; font-size: 1.35rem; margin-bottom: 14px; color: var(--night); }
+    .box ul { list-style: none; }
+    .box li { font-size: 0.97rem; line-height: 1.55; margin-bottom: 10px; padding-left: 30px; position: relative; }
+    .box.yes li::before { content: '✔'; position: absolute; left: 4px; color: var(--green); font-weight: 800; }
+    .box.no li::before { content: '✖'; position: absolute; left: 4px; color: var(--red); font-weight: 800; }
+
+    .notice {
+      background: #FFF7D6;
+      border: 2px solid var(--accent);
+      border-radius: 16px;
+      padding: 20px 22px;
+      font-size: 0.97rem;
+      line-height: 1.65;
+      margin-bottom: 60px;
+    }
+    .notice strong { color: var(--night); }
+
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 60px; }
+    .feature { background: #fff; border-radius: 20px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .feature .emoji { font-size: 2rem; display: block; margin-bottom: 8px; }
+    .feature h4 { font-size: 1.05rem; font-weight: 800; color: var(--night); margin-bottom: 6px; }
+    .feature p { font-size: 0.92rem; color: var(--text-soft); line-height: 1.55; }
+
+    .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px; }
+    .link-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--dark);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      font-weight: 800;
+      font-size: 1rem;
+      border: 2px solid transparent;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .link-card:hover { border-color: var(--link); transform: translateY(-3px); }
+    .link-card .icon { font-size: 2rem; display: block; margin-bottom: 10px; }
+
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); text-align: center; padding: 30px 20px; font-size: 0.9rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html">🛋️ AppOnTheCouch</a>
+  <span>›</span>
+  <a href="#">MyLactoBro</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <img src="mylactobro_icona.png" alt="Icona MyLactoBro" class="icon">
+    <h1>MyLactoBro</h1>
+    <div class="tagline">🥛 Conta il lattosio, pasto dopo pasto</div>
+    <div class="energy" aria-hidden="true">
+      <i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i>
+      <i class="y"></i><i class="y"></i><i class="o"></i><i class="e"></i><i class="e"></i>
+    </div>
+    <div class="energy-label">7,8 g su 10 g · la soglia la decidi tu</div>
+    <div class="store-buttons">
+      <span class="store-btn">📱 App Store <span class="soon">presto</span></span>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C300,60 900,0 1200,30 L1200,60 L0,60 Z" fill="#F6F4FB"/>
+  </svg>
+</div>
+
+<main>
+
+  <p class="intro">Sei intollerante al lattosio e a tavola ti chiedi «quanto ne sto mangiando?». MyLactoBro è un contatore: aggiungi gli alimenti del pasto, l'app somma i grammi di lattosio e li confronta con la soglia che hai deciso tu. Una barra di energia in stile videogioco retrò ti mostra a che punto sei, e la mascotte, una goccia di latte con il casco da astronauta, ti fa compagnia.</p>
+
+  <h2 class="section-title">🎮 Come funziona</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <h4>Prepara la tua scheda</h4>
+      <p>Inserisci le pastiglie di lattasi che usi e le tue soglie di lattosio per pasto. I numeri li scegli tu: l'app non li suggerisce.</p>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <h4>Premi START</h4>
+      <p>Aggiungi gli alimenti del pasto con le porzioni già pronte. La barra si riempie: verde, gialla, arancione, rossa.</p>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <h4>Avviso e storico</h4>
+      <p>Se superi la soglia l'app ti avvisa. A fine pasto lo ritrovi nello storico, con alimenti, grammi e pastiglie annotate.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">🧭 Cos'è e cosa non è</h2>
+  <div class="is-isnt">
+    <div class="box yes">
+      <h3>MyLactoBro è…</h3>
+      <ul>
+        <li>un <strong>contatore informativo</strong> del lattosio contenuto negli alimenti di un pasto;</li>
+        <li>un modo semplice per confrontare quel totale con una <strong>soglia personale</strong> che stabilisci tu;</li>
+        <li>un <strong>diario dei pasti</strong>, per ricordare cosa hai mangiato e come è andata;</li>
+        <li>una lista di alimenti con valori presi da <strong>studi e banche dati</strong>, con le fonti consultabili nell'app.</li>
+      </ul>
+    </div>
+    <div class="box no">
+      <h3>MyLactoBro non è…</h3>
+      <ul>
+        <li>un <strong>dispositivo medico</strong>: non fa diagnosi e non cura nulla;</li>
+        <li>un consigliere sulle <strong>pastiglie</strong>: non ti dice quante prenderne né quando;</li>
+        <li>un sostituto del <strong>medico</strong> o del dietista;</li>
+        <li>una garanzia sul singolo prodotto: i valori sono medie e possono cambiare con la marca. <strong>Conta l'etichetta</strong>;</li>
+        <li>un'app per l'<strong>allergia alle proteine del latte</strong>, che è una condizione diversa dall'intolleranza al lattosio.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="notice">
+    <strong>Prima di tutto, il medico.</strong> Se pensi di essere intollerante al lattosio, o hai dubbi su quanto lattosio puoi assumere o su come usare la lattasi, parlane con il tuo medico. MyLactoBro ti aiuta a tenere i conti, ma le decisioni sulla tua salute spettano a te e a chi ti segue.
+  </div>
+
+  <h2 class="section-title">✨ In più</h2>
+  <div class="features">
+    <div class="feature">
+      <span class="emoji">🧀</span>
+      <h4>Alimenti già pronti</h4>
+      <p>Latte, yogurt, formaggi freschi e stagionati, panna, gelato, cioccolato e altro, con porzioni comuni.</p>
+    </div>
+    <div class="feature">
+      <span class="emoji">📚</span>
+      <h4>Valori trasparenti</h4>
+      <p>Quando le fonti non sono d'accordo, l'app usa un valore prudente. Le fonti sono elencate nella schermata Info.</p>
+    </div>
+    <div class="feature">
+      <span class="emoji">🔒</span>
+      <h4>I tuoi dati restano tuoi</h4>
+      <p>Nessun account. Pastiglie, soglie e pasti restano solo sul telefono, e puoi cancellarli quando vuoi dalle Impostazioni.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">🔗 Informazioni legali</h2>
+  <div class="link-grid">
+    <a href="privacy.html" class="link-card">
+      <span class="icon">🔒</span>
+      Privacy Policy
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 AppOnTheCouch · <a href="mailto:apponthecouch@gmail.com">apponthecouch@gmail.com</a> · Valencia, Spagna</p>
+</footer>
+
+</body>
+</html>
